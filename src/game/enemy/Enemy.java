@@ -16,8 +16,8 @@ import static game.map.TileMember.TYPE_ENEMY;
  */
 public class Enemy extends GameObject implements PhysicsBody {
     BoxCollider boxCollider;
-    Vector2D velocity;
-    FrameCounter frameCounter;
+    public Vector2D velocity;
+    public FrameCounter frameCounter;
     public Enemy() {
         super();
         this.frameCounter = new FrameCounter(150);

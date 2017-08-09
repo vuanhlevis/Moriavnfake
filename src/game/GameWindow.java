@@ -1,5 +1,6 @@
 package game;
 
+import game.base.FrameCounter;
 import game.base.GameObject;
 import game.base.GameObjectPool;
 import game.base.Settings;
@@ -24,10 +25,14 @@ public class GameWindow extends JFrame{
 
     BufferedImage backBufferImage;
     Graphics2D backBufferGraphics2D;
+    float position = Player.instance.position.x;
 
     InputManager inputManager = InputManager.instance;
 
     long lastTimeUpdate = -1;
+
+    boolean addEnemy = false;
+    boolean stopaddEnemy = false;
 
     public GameWindow() {
         setupWindow();
@@ -50,6 +55,11 @@ public class GameWindow extends JFrame{
     private void addEnemy() {
         Enemy enemy = GameObjectPool.recycle(Enemy.class);
         enemy.position.set(600,10);
+
+//        if (addEnemy) {
+//
+//            addEnemy = false;
+//        }
     }
 
     private void loadMap() {
@@ -98,6 +108,29 @@ public class GameWindow extends JFrame{
     public void loop() {
         while (true) {
 
+            if (Player.instance.position.x >= 2460) {
+                addEnemy = true;
+            }
+//            System.out.println(addEnemy);
+
+            if (addEnemy && !stopaddEnemy) {
+                Enemy enemy1 = GameObjectPool.recycle(Enemy.class);
+                enemy1.position.set(2470,10);
+                enemy1.frameCounter = new FrameCounter(600);
+                Enemy enemy2 = GameObjectPool.recycle(Enemy.class);
+                enemy2.position.set(2500,10);
+                enemy2.frameCounter = new FrameCounter(600);
+
+                Enemy enemy3 = GameObjectPool.recycle(Enemy.class);
+                enemy3.position.set(2530,10);
+                enemy3.frameCounter = new FrameCounter(600);
+                enemy3.velocity.set(-1,0);
+                Enemy enemy4 = GameObjectPool.recycle(Enemy.class);
+                enemy4.position.set(2560,10);
+                enemy4.velocity.set(-1,0);
+                enemy4.frameCounter = new FrameCounter(600);
+                stopaddEnemy = true;
+            }
             if (lastTimeUpdate == -1) {
                 lastTimeUpdate = System.currentTimeMillis();
             }

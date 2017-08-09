@@ -47,6 +47,7 @@ public class Player extends GameObject implements PhysicsBody {
     @Override
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
+//        System.out.println(this.position);
 
         this.velocity.y += gravity;
 
@@ -183,7 +184,7 @@ public class Player extends GameObject implements PhysicsBody {
             }
 
             if (body.getType() == TYPE_NOPLACE) {
-                body.getVelocity().set(0,10);
+                body.getVelocity().set(0,5);
             }
 
 
