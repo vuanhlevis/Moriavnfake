@@ -2,31 +2,31 @@ package game.base.renderer;
 
 import game.base.FrameCounter;
 import game.base.Vector2D;
+import game.base.camera.Camera;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
 /**
  * Created by levua on 8/3/2017.
  */
-public class Animation implements Renderer{
+public class Animation implements Renderer {
     private List<BufferedImage> images;
     private int imageIndext;
     private FrameCounter frameCounter;
     private boolean finished;
     private boolean repeat;
 
-    public Animation (int delayFrame, boolean repeat, BufferedImage ... imageArr ) {
+    public Animation(int delayFrame, boolean repeat, BufferedImage... imageArr) {
         frameCounter = new FrameCounter(delayFrame);
         this.images = Arrays.asList(imageArr);
         this.repeat = repeat;
     }
 
-    public Animation(BufferedImage ... imageArr) {
-        this(5,true,imageArr);
+    public Animation(BufferedImage... imageArr) {
+        this(5, true, imageArr);
     }
 
     public boolean isFinished() {
@@ -41,8 +41,10 @@ public class Animation implements Renderer{
         }
 
         BufferedImage image = images.get(imageIndext);
-        g.drawImage(image,
-                (int) position.x - image.getWidth() / 2, (int) position.y - image.getHeight() / 2, null);
+        Vector2D renderPosition = new Vector2D(position.x - image.getWidth() / 2, position.y - image.getHeight() / 2);
+        Vector2D positionInCamera = Camera.instance.translate(renderPosition);
+        g.drawImage(image, (int) (positionInCamera.x),
+                (int) (positionInCamera.y), null);
     }
 
     private void changeIndext() {
@@ -51,9 +53,8 @@ public class Animation implements Renderer{
                 imageIndext = 0;
             }
             finished = true;
-        }
-        else {
-            imageIndext ++;
+        } else {
+            imageIndext++;
         }
     }
 

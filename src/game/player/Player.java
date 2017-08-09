@@ -1,13 +1,11 @@
 package game.player;
 
-import game.Utils;
 import game.base.*;
 import game.base.actions.WaitAction;
 import game.base.inputs.InputManager;
 import game.base.physics.BoxCollider;
 import game.base.physics.Physics;
 import game.base.physics.PhysicsBody;
-import game.base.renderer.ImageRenderer;
 import game.enemy.Enemy;
 import game.map.*;
 
@@ -25,6 +23,7 @@ public class Player extends GameObject implements PhysicsBody {
     WaitAction waitAction;
     boolean pointion;
     public boolean moveAuto;
+    PlayerAnimator playerAnimator;
 
     public float gravity = 1f;
     public Vector2D velocity;
@@ -38,7 +37,8 @@ public class Player extends GameObject implements PhysicsBody {
         this.moveAuto = false;
         this.pointion = false;
         this.velocity = new Vector2D();
-        this.renderer = new ImageRenderer(Utils.loadAssetImage("chicken.png"));
+        this.playerAnimator = new PlayerAnimator();
+        this.renderer = playerAnimator;
         this.boxCollider = new BoxCollider(29, 29);
         this.children.add(boxCollider);
         this.alive = true;
@@ -112,8 +112,13 @@ public class Player extends GameObject implements PhysicsBody {
         moveSpecial();
 
         this.contraints.make(this.position);
+        animate();
 
 
+    }
+
+    private void animate() {
+        playerAnimator.run(this);
     }
 
     private void hitEnemy() {
