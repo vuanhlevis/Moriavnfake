@@ -29,7 +29,7 @@ public class Camera extends GameObject {
         if (followedGameObject != null) {
             this.position.x = followedGameObject.screenPosition.x - 200;
         }
-        System.out.println(position);
+
     }
 
     public Vector2D translate(Vector2D position) {

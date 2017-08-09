@@ -129,12 +129,12 @@ public class TileMapText extends GameObject {
 
                 } else if (tileMem == 38 || tileMem == 45) {
                     tileMember = new Water(tileMem, TileMember.TYPE_WATER, new Vector2D(col * tileSize, y + row * tileSize));
-//                } else if (tileMem == 29) {
-//                    tileMember.isStone = true;
+                } else if (tileMem == 29) {
+                    tileMember = new Water(tileMem, TileMember.TYPE_STONE, new Vector2D(col * tileSize, y + row * tileSize));
                 } else if (tileMem == 31) {
                     tileMember = new BlueBrick(tileMem, TileMember.TYPE_BLUEBRICK, new Vector2D(col * tileSize, y + row * tileSize));
                 } else {
-                    tileMember = new Brick(tileMem, TileMember.TYPE_BRICK, new Vector2D(col * tileSize, y + row * tileSize));
+                    tileMember = new Brick(tileMem, TileMember.TYPE_STONE, new Vector2D(col * tileSize, y + row * tileSize));
                 }
                 if (tileMem != 0) {
 
