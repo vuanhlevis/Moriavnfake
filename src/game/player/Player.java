@@ -70,6 +70,10 @@ public class Player extends GameObject implements PhysicsBody {
                 this.velocity.x -= 5;
             }
 
+            PhysicsBody body = Physics.checkPointion(Brick.class);
+            if (body!= null) {
+                body.setActive(false);
+            }
         }
 
                 if (InputManager.instance.upPressed && alive && waitAction.run(this)) {

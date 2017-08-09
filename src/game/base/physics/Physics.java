@@ -4,6 +4,8 @@ import game.base.Vector2D;
 
 import java.util.Vector;
 
+import static game.map.TileMember.TYPE_MUSHROOM;
+
 /**
  * Created by levua on 8/3/2017.
  */
@@ -12,6 +14,15 @@ public class Physics {
 
     public static void add(PhysicsBody body) {
         bodies.add(body);
+    }
+
+    public static <T extends PhysicsBody> T checkPointion(Class<T> classz) {
+        for (PhysicsBody body : bodies) {
+            if (body.isActive() && body.getClass() == classz && body.getType() == TYPE_MUSHROOM) {
+                return (T) body;
+            }
+        }
+        return null;
     }
 
     public static <T extends PhysicsBody> T bodyInRect(BoxCollider boxCollider, Class<T> classz) {
