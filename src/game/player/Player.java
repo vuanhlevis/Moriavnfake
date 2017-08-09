@@ -37,7 +37,7 @@ public class Player extends GameObject implements PhysicsBody {
         this.boxCollider = new BoxCollider(29, 29);
         this.children.add(boxCollider);
         this.alive = true;
-        this.waitAction = new WaitAction(17);
+        this.waitAction = new WaitAction(15);
         contraints = new Contraints(0, Settings.GAMEPLAY_HEIGHT, 0, Settings.MAP_WIDTH);
         instance = this;
     }
@@ -57,7 +57,7 @@ public class Player extends GameObject implements PhysicsBody {
         if (InputManager.instance.rightPressed && alive) {
             this.velocity.x += 5;
         }
-        
+
         if (InputManager.instance.upPressed && alive && waitAction.run(this)) {
             //Brick.class
                 if (Physics.bodyInRect(position.add(0, 1), boxCollider.width, boxCollider.height, standclass) != null)
@@ -65,6 +65,7 @@ public class Player extends GameObject implements PhysicsBody {
 
             waitAction.reset();
         }
+        waitAction.run(this);
 
         moveHorizontal();
         this.position.x += velocity.x;
