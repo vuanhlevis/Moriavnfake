@@ -1,9 +1,11 @@
 package game;
 
 import game.base.GameObject;
+import game.base.GameObjectPool;
 import game.base.Settings;
 import game.base.camera.Camera;
 import game.base.inputs.InputManager;
+import game.enemy.Enemy;
 import game.map.TileMapText;
 import game.player.Player;
 
@@ -46,8 +48,8 @@ public class GameWindow extends JFrame{
     }
 
     private void addEnemy() {
-//        Enemy enemy = GameObjectPool.recycle(Enemy.class);
-//        enemy.position.set(600,10);
+        Enemy enemy = GameObjectPool.recycle(Enemy.class);
+        enemy.position.set(600,10);
     }
 
     private void loadMap() {

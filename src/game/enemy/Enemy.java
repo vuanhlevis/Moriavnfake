@@ -1,6 +1,7 @@
 package game.enemy;
 
 import game.Utils;
+import game.base.FrameCounter;
 import game.base.GameObject;
 import game.base.Vector2D;
 import game.base.physics.BoxCollider;
@@ -16,27 +17,36 @@ import static game.map.TileMember.TYPE_ENEMY;
 public class Enemy extends GameObject implements PhysicsBody {
     BoxCollider boxCollider;
     Vector2D velocity;
-
+    FrameCounter frameCounter;
     public Enemy() {
         super();
+        this.frameCounter = new FrameCounter(150);
         this.boxCollider = new BoxCollider(29,29);
         this.renderer = new ImageRenderer(Utils.loadAssetImage("yellow_square.jpg"));
         this.velocity = new Vector2D();
         children.add(boxCollider);
+        velocity.x = -0.5f;
     }
+
 
     @Override
     public void run(Vector2D parentPosition) {
+
         super.run(parentPosition);
-//        hitPlayer();
-        velocity.x = -0.5f;
+
         this.velocity.y +=  Player.instance.gravity;
         this.moveVertical(boxCollider,screenPosition,this.velocity);
         this.position.y += velocity.y;
 
         this.moveHorizontal(boxCollider,screenPosition,velocity);
         this.position.x += velocity.x;
-//        System.out.println(boxCollider);
+
+        if (frameCounter.run()) {
+            velocity.x *= -1;
+            frameCounter.reset();
+            frameCounter = new FrameCounter(200);
+        }
+        
 
     }
 
