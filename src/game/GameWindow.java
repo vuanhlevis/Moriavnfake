@@ -95,7 +95,6 @@ public class GameWindow extends JFrame{
 
     public void loop() {
         while (true) {
-            System.out.println(Player.instance.position);
 
             if (lastTimeUpdate == -1) {
                 lastTimeUpdate = System.currentTimeMillis();

@@ -37,7 +37,7 @@ public class Player extends GameObject implements PhysicsBody {
         this.boxCollider = new BoxCollider(29, 29);
         this.children.add(boxCollider);
         this.alive = true;
-        this.waitAction = new WaitAction(50);
+        this.waitAction = new WaitAction(17);
         contraints = new Contraints(0, Settings.GAMEPLAY_HEIGHT, 0, Settings.MAP_WIDTH);
         instance = this;
     }
@@ -57,11 +57,13 @@ public class Player extends GameObject implements PhysicsBody {
         if (InputManager.instance.rightPressed && alive) {
             this.velocity.x += 5;
         }
-
-        if (InputManager.instance.upPressed && alive) {
+        
+        if (InputManager.instance.upPressed && alive && waitAction.run(this)) {
             //Brick.class
-            if (Physics.bodyInRect(position.add(0, 1), boxCollider.width, boxCollider.height, standclass) != null)
-                this.velocity.y = -15;
+                if (Physics.bodyInRect(position.add(0, 1), boxCollider.width, boxCollider.height, standclass) != null)
+                    this.velocity.y = -15;
+
+            waitAction.reset();
         }
 
         moveHorizontal();
@@ -76,12 +78,7 @@ public class Player extends GameObject implements PhysicsBody {
         this.position.y += velocity.y;
         moveSpecial();
 
-
-        if (!this.alive) {
-            waitAction.run(this);
-        }
         this.contraints.make(this.position);
-        waitAction.reset();
 
 
     }
@@ -133,7 +130,7 @@ public class Player extends GameObject implements PhysicsBody {
 
     private void moveVertical() {
         PhysicsBody body = Physics.bodyInRect(position.add(0, velocity.y), boxCollider.width, boxCollider.height, standclass);
-        if (body != null && alive) {
+        if (body != null && alive ) {
 
             float detalY = Mathx.sign(velocity.y);
             float deltaX = Mathx.sign(velocity.x);
@@ -147,7 +144,6 @@ public class Player extends GameObject implements PhysicsBody {
             }
 
             if (body.getType() == TYPE_ENEMY && this.velocity.y > 0) {
-                System.out.println(this.velocity);
                 this.velocity.set(0, -10);
                 body.setActive(false);
             } else if (body.getType() == TYPE_ENEMY) {
@@ -166,7 +162,6 @@ public class Player extends GameObject implements PhysicsBody {
                 this.velocity.y = 0;
             }
 
-
         }
 
     }
@@ -181,8 +176,7 @@ public class Player extends GameObject implements PhysicsBody {
             if (velocity.y < 0 && this.position.y - 40 < body.getBoxCollider().screenPosition.y
                     && this.position.x + 35 > body.getBoxCollider().screenPosition.x) {
                 this.position.y = body.getBoxCollider().screenPosition.y + 30;
-                System.out.println(this.position);
-                System.out.println(body.getBoxCollider().screenPosition);
+
                 body.setDissabled(false);
                 body.setActive(true);
             }

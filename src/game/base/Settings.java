@@ -9,5 +9,4 @@ public class Settings {
     public static final int MAP_HEIGHT = 600;
     public static final int MAP_WIDTH = 6000;
 
-
 }
