@@ -46,7 +46,7 @@ public class Enemy extends GameObject implements PhysicsBody {
             frameCounter.reset();
             frameCounter = new FrameCounter(200);
         }
-        
+
 
     }
 

@@ -152,6 +152,11 @@ public class Player extends GameObject implements PhysicsBody {
                 this.alive = false;
             }
 
+            if (body.getType() == TYPE_NOPLACE) {
+                body.setActive(false);
+            }
+
+
 
             if (body.getType() == TYPE_WATER) {
                 this.velocity.set(0, -15);

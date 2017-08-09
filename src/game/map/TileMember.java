@@ -12,12 +12,13 @@ public class TileMember extends GameObject implements PhysicsBody {
     private BoxCollider boxCollider;
 
 
-    public static final int TYPE_ENEMY = 6;
     public static final int TYPE_STONE = 1;
     public static final int TYPE_BRICK = 2;
-    public static final int TYPE_BLUEBRICK = 5;
     public static final int TYPE_INFINITYSTONE = 3;
     public static final int TYPE_WATER = 4;
+    public static final int TYPE_BLUEBRICK = 5;
+    public static final int TYPE_ENEMY = 6;
+    public static final int TYPE_NOPLACE = 7;
     public static final boolean TYPE_SPECIAL = true;
 
     public int type; // 0 => STON, 1 => BRICK, .v.v.v
