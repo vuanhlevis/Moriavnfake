@@ -67,6 +67,11 @@ public class Enemy extends GameObject implements PhysicsBody {
     }
 
     @Override
+    public Vector2D getVelocity() {
+        return velocity;
+    }
+
+    @Override
     public BoxCollider getBoxCollider() {
         return boxCollider;
     }

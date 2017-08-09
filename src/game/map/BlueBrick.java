@@ -40,6 +40,11 @@ public class BlueBrick extends TileMember implements PhysicsBody {
         return this.type;
     }
 
+    @Override
+    public Vector2D getVelocity() {
+        return velocity;
+    }
+
 
     @Override
     public boolean isDisabled() {

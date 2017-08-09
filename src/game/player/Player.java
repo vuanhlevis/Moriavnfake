@@ -158,7 +158,7 @@ public class Player extends GameObject implements PhysicsBody {
             }
 
             if (body.getType() == TYPE_NOPLACE) {
-                body.setActive(false);
+                body.getVelocity().set(0,10);
             }
 
 
@@ -223,5 +223,10 @@ public class Player extends GameObject implements PhysicsBody {
     @Override
     public BoxCollider getBoxCollider() {
         return boxCollider;
+    }
+
+    @Override
+    public Vector2D getVelocity() {
+        return velocity;
     }
 }

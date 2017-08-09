@@ -22,7 +22,7 @@ public class TileMember extends GameObject implements PhysicsBody {
     public static final int TYPE_MUSHROOM = 8;
     public static final int TYPE_MINERALWATER = 9;
     public static final boolean TYPE_SPECIAL = true;
-
+    Vector2D velocity;
     public int type; // 0 => STON, 1 => BRICK, .v.v.v
 
     public TileMember(int index, int type, Vector2D position) {
@@ -32,6 +32,7 @@ public class TileMember extends GameObject implements PhysicsBody {
 
         imageRenderer = new ImageRenderer(Utils.loadImage(path));
         imageRenderer.anchor = new Vector2D(0.5f, 0.5f);
+        this.velocity = new Vector2D();
 
 
         this.renderer = imageRenderer;
@@ -75,6 +76,11 @@ public class TileMember extends GameObject implements PhysicsBody {
     @Override
     public int getType() {
         return 0;
+    }
+
+    @Override
+    public Vector2D getVelocity() {
+        return velocity;
     }
 
 
