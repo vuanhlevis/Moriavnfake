@@ -9,6 +9,7 @@ import game.base.Vector2D;
 public class Camera extends GameObject {
 
     public static Camera instance = new Camera();
+    float minFollowPlayer = 0;
 
     private GameObject followedGameObject;
 
@@ -26,7 +27,10 @@ public class Camera extends GameObject {
         super.run(parentPosition);
         super.run(parentPosition);
         if (followedGameObject != null) {
-            this.position.x = followedGameObject.screenPosition.x - 200;
+            if (followedGameObject.screenPosition.x - 200 >= 0) {
+                this.position.x = followedGameObject.screenPosition.x - 200;
+
+            } else this.position.x = minFollowPlayer;
         }
 
     }

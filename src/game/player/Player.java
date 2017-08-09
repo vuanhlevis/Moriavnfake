@@ -12,6 +12,7 @@ import game.enemy.Enemy;
 import game.map.*;
 
 import static game.map.TileMember.*;
+import static game.map.Tube.tubes;
 
 /**
  * Created by levua on 8/3/2017.
@@ -20,7 +21,7 @@ public class Player extends GameObject implements PhysicsBody {
     private BoxCollider boxCollider;
     Contraints contraints;
     public boolean alive;
-    Class standclass[] = {Brick.class, Stone.class, InfinityStone.class, Water.class, Enemy.class};
+    Class standclass[] = {Brick.class, Stone.class, InfinityStone.class, Water.class, Enemy.class, Tube.class};
     WaitAction waitAction;
     boolean pointion;
     public boolean moveAuto;
@@ -49,6 +50,7 @@ public class Player extends GameObject implements PhysicsBody {
     @Override
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
+//        System.out.println(this.position);
 
         this.velocity.y += gravity;
 
@@ -74,15 +76,14 @@ public class Player extends GameObject implements PhysicsBody {
                 this.velocity.x -= 5;
             }
 
-            PhysicsBody body = Physics.checkPointion(Brick.class, TYPE_MUSHROOM);
+            PhysicsBody body = Physics.checkPointion(Brick.class);
             if (body!= null) {
                 body.setActive(false);
             }
         }
-        if (moveAuto && velocity.y == 0.1f) {
+        if (moveAuto && velocity.y <= 0.2) {
             this.position.x += 1;
         }
-
 
         if (InputManager.instance.upPressed && alive && waitAction.run(this) && !moveAuto) {
             //Brick.class
@@ -91,8 +92,12 @@ public class Player extends GameObject implements PhysicsBody {
 
             waitAction.reset();
         }
-        waitAction.run(this);
 
+        if (Tube.instance.canGoDown() == true && InputManager.instance.downPressed && alive){
+            this.position.set (tubes.get(1).position.x, tubes.get(1).position.y - 30);
+        }
+
+        waitAction.run(this);
 
         moveHorizontal();
         this.position.x += velocity.x;
@@ -108,16 +113,13 @@ public class Player extends GameObject implements PhysicsBody {
 
         this.contraints.make(this.position);
 
-        if (this.position.y > 500) {
-            this.alive = false;
-        }
-
 
     }
 
     private void hitEnemy() {
 
     }
+
 
     private void hitStone() {
         float deltaX = velocity.x > 0 ? 1 : -1;
@@ -181,7 +183,7 @@ public class Player extends GameObject implements PhysicsBody {
             while (Physics.bodyInRect(position.add(0, detalY), boxCollider.width, boxCollider.height, standclass) == null) {
                 position.addUp(0, detalY);
             }
-            if (velocity.y < 0 && body.getType() == TYPE_BRICK) {
+            if ((velocity.y < 0 && body.getType() == TYPE_BRICK)) {
                 this.velocity.y = -5;
 
                 body.setActive(false);
@@ -229,10 +231,6 @@ public class Player extends GameObject implements PhysicsBody {
 
             if (body.getType() == TYPE_BRICK && body.getBoxCollider().screenPosition.x > 1320 && body.getBoxCollider().screenPosition.x < 1530) {
                 body.getVelocity().set(0,10);
-            }
-
-            if (body.getType() == TYPE_SUBWAY && InputManager.instance.downPressed) {
-
             }
 
             if (this.alive && body.getType() != TYPE_ENEMY)  {
