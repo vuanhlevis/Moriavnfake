@@ -49,7 +49,6 @@ public class Player extends GameObject implements PhysicsBody {
     @Override
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
-//        System.out.println(this.position);
 
         this.velocity.y += gravity;
 
@@ -80,7 +79,7 @@ public class Player extends GameObject implements PhysicsBody {
                 body.setActive(false);
             }
         }
-        if (moveAuto && velocity.y <= 0.2) {
+        if (moveAuto && velocity.y == 0.1f) {
             this.position.x += 1;
         }
 
@@ -108,7 +107,7 @@ public class Player extends GameObject implements PhysicsBody {
         moveSpecial();
 
         this.contraints.make(this.position);
-        
+
         if (this.position.y > 500) {
             this.alive = false;
         }
@@ -119,7 +118,6 @@ public class Player extends GameObject implements PhysicsBody {
     private void hitEnemy() {
 
     }
-
 
     private void hitStone() {
         float deltaX = velocity.x > 0 ? 1 : -1;
@@ -231,6 +229,10 @@ public class Player extends GameObject implements PhysicsBody {
 
             if (body.getType() == TYPE_BRICK && body.getBoxCollider().screenPosition.x > 1320 && body.getBoxCollider().screenPosition.x < 1530) {
                 body.getVelocity().set(0,10);
+            }
+
+            if (body.getType() == TYPE_SUBWAY && InputManager.instance.downPressed) {
+
             }
 
             if (this.alive && body.getType() != TYPE_ENEMY)  {
