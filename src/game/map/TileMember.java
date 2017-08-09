@@ -19,6 +19,8 @@ public class TileMember extends GameObject implements PhysicsBody {
     public static final int TYPE_BLUEBRICK = 5;
     public static final int TYPE_ENEMY = 6;
     public static final int TYPE_NOPLACE = 7;
+    public static final int TYPE_MUSHROOM = 8;
+    public static final int TYPE_MINERALWATER = 9;
     public static final boolean TYPE_SPECIAL = true;
 
     public int type; // 0 => STON, 1 => BRICK, .v.v.v

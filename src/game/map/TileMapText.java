@@ -135,6 +135,10 @@ public class TileMapText extends GameObject {
                     tileMember = new BlueBrick(tileMem, TileMember.TYPE_BLUEBRICK, new Vector2D(col * tileSize, y + row * tileSize));
                 } else if (tileMem == 52) {
                     tileMember = new Brick(tileMem, TileMember.TYPE_NOPLACE, new Vector2D(col * tileSize, y + row * tileSize));
+                } else if (tileMem == 85 ||tileMem == 86 ||tileMem == 87 ||tileMem == 99 || tileMem ==  112) {
+                    tileMember = new Brick(tileMem, TileMember.TYPE_MUSHROOM, new Vector2D(col * tileSize, y + row * tileSize));
+                } else if (tileMem == 36) {
+                    tileMember = new Brick(tileMem, TileMember.TYPE_MINERALWATER, new Vector2D(col * tileSize, y + row * tileSize));
                 } else {
                     tileMember = new Brick(tileMem, TileMember.TYPE_STONE, new Vector2D(col * tileSize, y + row * tileSize));
                 }

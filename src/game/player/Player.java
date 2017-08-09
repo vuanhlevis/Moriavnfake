@@ -152,11 +152,25 @@ public class Player extends GameObject implements PhysicsBody {
                 this.alive = false;
             }
 
+            if (body.getType() == TYPE_MINERALWATER) {
+                this.position.x += 80;
+                this.position.y -= 60;
+            }
+
             if (body.getType() == TYPE_NOPLACE) {
                 body.setActive(false);
             }
 
 
+            if (body.getType() == 36) {
+                this.position.x += 80;
+                this.position.y -= 50;
+            }
+
+            if (body.getType() == TYPE_MUSHROOM) {
+
+                //
+            }
 
             if (body.getType() == TYPE_WATER) {
                 this.velocity.set(0, -15);
