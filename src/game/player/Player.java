@@ -75,7 +75,7 @@ public class Player extends GameObject implements PhysicsBody {
                 this.velocity.x -= 5;
             }
 
-            PhysicsBody body = Physics.checkPointion(Brick.class);
+            PhysicsBody body = Physics.checkPointion(Brick.class, TYPE_MUSHROOM);
             if (body!= null) {
                 body.setActive(false);
             }
@@ -83,6 +83,7 @@ public class Player extends GameObject implements PhysicsBody {
         if (moveAuto && velocity.y <= 0.2) {
             this.position.x += 1;
         }
+
 
         if (InputManager.instance.upPressed && alive && waitAction.run(this) && !moveAuto) {
             //Brick.class
@@ -92,6 +93,7 @@ public class Player extends GameObject implements PhysicsBody {
             waitAction.reset();
         }
         waitAction.run(this);
+
 
         moveHorizontal();
         this.position.x += velocity.x;
@@ -106,6 +108,10 @@ public class Player extends GameObject implements PhysicsBody {
         moveSpecial();
 
         this.contraints.make(this.position);
+        
+        if (this.position.y > 500) {
+            this.alive = false;
+        }
 
 
     }
@@ -221,6 +227,10 @@ public class Player extends GameObject implements PhysicsBody {
             if (body.getType() == TYPE_FLAG) {
                 this.position.x += 30;
                 this.velocity.y = 2;
+            }
+
+            if (body.getType() == TYPE_BRICK && body.getBoxCollider().screenPosition.x > 1320 && body.getBoxCollider().screenPosition.x < 1530) {
+                body.getVelocity().set(0,10);
             }
 
             if (this.alive && body.getType() != TYPE_ENEMY)  {
