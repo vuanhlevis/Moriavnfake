@@ -27,7 +27,7 @@ public class Tube extends TileMember {
     }
 
     public boolean canGoDown(){
-        if (Player.instance.position.x >= instance.position.x - 15 && Player.instance.position.x >= instance.position.x - 15    ){
+        if (Player.instance.position.x >= instance.position.x - 15 && Player.instance.position.x <= instance.position.x + 15    ){
             return true;
         }
         else return false;
