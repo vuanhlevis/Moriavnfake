@@ -1,5 +1,6 @@
 package game.map;
 
+import game.base.Settings;
 import game.base.Vector2D;
 import game.base.physics.BoxCollider;
 import game.player.Player;
@@ -27,7 +28,7 @@ public class Tube extends TileMember {
     }
 
     public boolean canGoDown(){
-        if (Player.instance.position.x >= instance.position.x - 15 && Player.instance.position.x <= instance.position.x + 15    ){
+        if (Player.instance.position.x >= instance.position.x - 15 && Player.instance.position.x >= instance.position.x - 15    ){
             return true;
         }
         else return false;
@@ -38,6 +39,9 @@ public class Tube extends TileMember {
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
         this.position.addUp(velocity);
+        if (Player.instance.position.y >= Settings.GAMEPLAY_HEIGHT - 50 && !Player.instance.alive) {
+            refresh();
+        }
 //        System.out.println(this.boxCollider);
     }
 
@@ -62,4 +66,8 @@ public class Tube extends TileMember {
         return this.isActive;
     }
 
+    @Override
+    public void refresh() {
+        super.refresh();
+    }
 }

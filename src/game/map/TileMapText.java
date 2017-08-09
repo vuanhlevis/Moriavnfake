@@ -143,6 +143,8 @@ public class TileMapText extends GameObject {
                     tileMember = new Brick(tileMem, TileMember.TYPE_FLAG, new Vector2D(col * tileSize, y + row * tileSize));
                 } else if (tileMem == 27 || tileMem == 28) {
                     tileMember = new Tube(tileMem, TileMember.TYPE_TUBE, new Vector2D(col * tileSize, y + row * tileSize));
+                } else if (tileMem == 42 || tileMem == 43 || tileMem == 56) {
+                    tileMember = new Brick(tileMem, TileMember.TYPE_CHECKPOINT, new Vector2D(col * tileSize, y + row * tileSize));
                 } else {
                     tileMember = new Brick(tileMem, TileMember.TYPE_STONE, new Vector2D(col * tileSize, y + row * tileSize));
                 }

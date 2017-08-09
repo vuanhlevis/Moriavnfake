@@ -4,6 +4,7 @@ import game.base.FrameCounter;
 import game.base.GameObject;
 import game.base.GameObjectPool;
 import game.base.Settings;
+import game.base.actions.WaitAction;
 import game.base.camera.Camera;
 import game.base.inputs.InputManager;
 import game.enemy.Enemy;
@@ -72,7 +73,7 @@ public class GameWindow extends JFrame{
 
     private void addPlayer() {
         Player player = new Player();
-        player.position.set(0 , 100);
+        player.position.set (20 , 100);
         GameObject.add(player);
     }
 
@@ -107,6 +108,11 @@ public class GameWindow extends JFrame{
 
     public void loop() {
         while (true) {
+
+            if (!Player.instance.alive && new WaitAction(50).run(Player.instance)) {
+                GameObject.clear();
+
+            }
 
             if (Player.instance.position.x >= 2460) {
                 addEnemy = true;
@@ -150,7 +156,9 @@ public class GameWindow extends JFrame{
 
     private void run() {
         GameObject.runAll();
+
         GameObject.runAllActions();
+
 //        SceneManager.instance.changeSceneIfNeeded();
     }
 

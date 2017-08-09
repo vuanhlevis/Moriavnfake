@@ -1,7 +1,9 @@
 package game.map;
 
+import game.base.Settings;
 import game.base.Vector2D;
 import game.base.physics.BoxCollider;
+import game.player.Player;
 
 /**
  * Created by levua on 8/7/2017.
@@ -23,6 +25,9 @@ public class Stone extends TileMember {
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
         this.position.addUp(velocity);
+        if (Player.instance.position.y >= Settings.GAMEPLAY_HEIGHT - 50 && !Player.instance.alive) {
+            refresh();
+        }
     }
 
     @Override
@@ -44,5 +49,11 @@ public class Stone extends TileMember {
     @Override
     public Vector2D getVelocity() {
         return velocity;
+    }
+
+    @Override
+    public void refresh() {
+        super.refresh();
+        this.velocity = new Vector2D();
     }
 }

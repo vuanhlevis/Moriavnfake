@@ -1,8 +1,10 @@
 package game.map;
 
+import game.base.Settings;
 import game.base.Vector2D;
 import game.base.physics.BoxCollider;
 import game.base.physics.PhysicsBody;
+import game.player.Player;
 
 /**
  * Created by levua on 8/7/2017.
@@ -31,6 +33,10 @@ public class BlueBrick extends TileMember implements PhysicsBody {
             this.position.addUp(0,10);
         }
 
+        if (Player.instance.position.y >= Settings.GAMEPLAY_HEIGHT - 50 && !Player.instance.alive) {
+            refresh();
+        }
+
 //        System.out.println(this.position + "hihi");
 //        System.out.println(Player.instance.getBoxCollider());
     }
@@ -54,5 +60,12 @@ public class BlueBrick extends TileMember implements PhysicsBody {
     @Override
     public boolean isActive() {
         return this.isActive;
+    }
+
+    @Override
+    public void refresh() {
+        super.refresh();
+        this.status = false;
+        this.velocity = new Vector2D();
     }
 }

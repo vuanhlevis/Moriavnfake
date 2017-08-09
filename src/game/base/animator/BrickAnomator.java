@@ -8,7 +8,7 @@ import game.base.renderer.Renderer;
 
 import java.awt.*;
 
-public class BrickAnomator extends GameObject implements Renderer{
+public class BrickAnomator extends GameObject implements Renderer {
 
     private Animation brickExplosionAnimation;
     //private boolean endOfAction;

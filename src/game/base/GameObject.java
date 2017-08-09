@@ -12,7 +12,7 @@ import java.util.Vector;
 /**
  * Created by levua on 8/3/2017.
  */
-public class GameObject extends MoveAll{
+public class GameObject extends MoveAll {
     public Vector2D position;
     public Vector2D screenPosition;
     public boolean isActive;
@@ -25,7 +25,7 @@ public class GameObject extends MoveAll{
     private Vector<Action> actions;
     private Vector<Action> newActions;
 
-    private static Vector<GameObject> gameObjects = new Vector<>();
+    protected static Vector<GameObject> gameObjects = new Vector<>();
     private static Vector<GameObject> newGameObjects = new Vector<>();
 
     public GameObject() {
@@ -54,7 +54,7 @@ public class GameObject extends MoveAll{
 
     public static void runAll() {
         for (GameObject gameObject : gameObjects) {
-            if (gameObject.isActive&& !gameObject.dissable )
+            if (gameObject.isActive && !gameObject.dissable)
                 gameObject.run(Vector2D.ZERO);
         }
         gameObjects.addAll(newGameObjects);
@@ -63,15 +63,15 @@ public class GameObject extends MoveAll{
 
     public static void renderAll(Graphics2D g2d) {
         for (GameObject gameObject : gameObjects) {
-            if (gameObject.isActive ) {
+            if (gameObject.isActive) {
                 gameObject.render(g2d);
             }
         }
     }
 
     public static void runAllActions() {
-        for(GameObject gameObject: gameObjects) {
-            if (gameObject.isActive && !gameObject.dissable ) {
+        for (GameObject gameObject : gameObjects) {
+            if (gameObject.isActive && !gameObject.dissable) {
                 gameObject.runActions();
             }
         }
@@ -92,7 +92,7 @@ public class GameObject extends MoveAll{
 
     public void runActions() {
         Iterator<Action> iterator = actions.iterator();
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             Action action = iterator.next();
             boolean actionDone = action.run(this);
             if (actionDone) {
@@ -113,7 +113,6 @@ public class GameObject extends MoveAll{
     public boolean isActive() {
         return isActive;
     }
-
 
 
     public void addAction(Action action) {

@@ -19,6 +19,7 @@ import static game.map.TileMember.*;
 public class Player extends GameObject implements PhysicsBody {
     private BoxCollider boxCollider;
     Contraints contraints;
+    boolean checkPoint;
     public boolean alive;
     Class standclass[] = {Brick.class, Stone.class, InfinityStone.class, Water.class, Enemy.class, Tube.class};
     WaitAction waitAction;
@@ -38,6 +39,7 @@ public class Player extends GameObject implements PhysicsBody {
 
     public Player() {
         super();
+        this.checkPoint = false;
         this.moveAuto = false;
         this.pointion = false;
         this.sleep = false;
@@ -80,11 +82,20 @@ public class Player extends GameObject implements PhysicsBody {
                 this.velocity.x -= 5;
             }
 
-            PhysicsBody body = Physics.checkPointion(Brick.class);
+            PhysicsBody body = Physics.checkPointion(Brick.class, TYPE_MUSHROOM);
             if (body != null) {
                 body.setActive(false);
             }
         }
+
+        if (checkPoint) {
+            PhysicsBody body = Physics.checkPointion(Brick.class, TYPE_CHECKPOINT);
+            if (body != null) {
+                body.setActive(false);
+            }
+        }
+
+
         if (moveAuto && velocity.y <= 0.2) {
             this.position.x += 1;
         }
@@ -96,9 +107,8 @@ public class Player extends GameObject implements PhysicsBody {
 
             waitAction.reset();
         }
-//        System.out.println(Tube.instance.canGoDown());
 
-        if (Tube.instance.canGoDown() == true && InputManager.instance.downPressed && alive) {
+        if (Tube.instance.canGoDown() && InputManager.instance.downPressed && alive) {
             sleep = true;
         }
 
@@ -118,6 +128,8 @@ public class Player extends GameObject implements PhysicsBody {
 
         this.contraints.make(this.position);
         animate();
+
+        if (this.position.y > 500) this.alive = false;
 
 
     }
@@ -172,6 +184,10 @@ public class Player extends GameObject implements PhysicsBody {
                 this.position.x = body.getBoxCollider().screenPosition.x;
                 this.moveAuto = true;
                 this.gravity = 0.1f;
+            }
+            if (body.getType() == TYPE_CHECKPOINT) {
+                checkPoint = true;
+                body.setActive(false);
             }
 
             if (body.getType() == TYPE_MUSHROOM) {
@@ -245,9 +261,16 @@ public class Player extends GameObject implements PhysicsBody {
                 body.getVelocity().set(0, 10);
             }
 
+            if (body.getType() == TYPE_CHECKPOINT) {
+                checkPoint = true;
+                body.setActive(false);
+            }
+
             if (this.alive && body.getType() != TYPE_ENEMY) {
                 this.velocity.y = 0;
             }
+
+
 
         }
 
@@ -301,5 +324,10 @@ public class Player extends GameObject implements PhysicsBody {
     public void refresh() {
         super.refresh();
         playerAnimator.refresh();
+        checkPoint = false;
+        this.moveAuto = false;
+        this.pointion = false;
+        this.sleep = false;
+        this.alive = true;
     }
 }
