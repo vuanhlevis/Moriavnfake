@@ -23,6 +23,7 @@ public class Player extends GameObject implements PhysicsBody {
     Class standclass[] = {Brick.class, Stone.class, InfinityStone.class, Water.class, Enemy.class};
     WaitAction waitAction;
     boolean pointion;
+    public boolean moveAuto;
 
     public float gravity = 1f;
     public Vector2D velocity;
@@ -33,6 +34,7 @@ public class Player extends GameObject implements PhysicsBody {
 
     public Player() {
         super();
+        this.moveAuto = false;
         this.pointion = false;
         this.velocity = new Vector2D();
         this.renderer = new ImageRenderer(Utils.loadAssetImage("chicken.png"));
@@ -52,7 +54,9 @@ public class Player extends GameObject implements PhysicsBody {
         this.velocity.y += gravity;
 
         this.velocity.x = 0;
-        if (!pointion) {
+
+
+        if (!pointion && !moveAuto) {
             if (InputManager.instance.leftPressed && alive) {
                 this.velocity.x -= 5;
             }
@@ -62,7 +66,7 @@ public class Player extends GameObject implements PhysicsBody {
             }
 
         }
-        else {
+        else if (pointion && !moveAuto){
             if (InputManager.instance.leftPressed && alive) {
                 this.velocity.x += 5;
             }
@@ -76,8 +80,11 @@ public class Player extends GameObject implements PhysicsBody {
                 body.setActive(false);
             }
         }
+        if (moveAuto && velocity.y <= 0.2) {
+            this.position.x += 1;
+        }
 
-                if (InputManager.instance.upPressed && alive && waitAction.run(this)) {
+        if (InputManager.instance.upPressed && alive && waitAction.run(this) && !moveAuto) {
             //Brick.class
                 if (Physics.bodyInRect(position.add(0, 1), boxCollider.width, boxCollider.height, standclass) != null)
                     this.velocity.y = -15;
@@ -145,6 +152,12 @@ public class Player extends GameObject implements PhysicsBody {
                 this.alive = false;
             }
 
+            if (body.getType() == TYPE_FLAG) {
+                this.position.x = body.getBoxCollider().screenPosition.x ;
+                this.moveAuto = true;
+                this.gravity = 0.1f;
+            }
+
             if (body.getType() == TYPE_MUSHROOM) {
                 pointion = true;
                 body.setActive(false);
@@ -203,6 +216,11 @@ public class Player extends GameObject implements PhysicsBody {
                 this.velocity.set(0, -15);
 
                 this.alive = false;
+            }
+
+            if (body.getType() == TYPE_FLAG) {
+                this.position.x += 30;
+                this.velocity.y = 2;
             }
 
             if (this.alive && body.getType() != TYPE_ENEMY)  {

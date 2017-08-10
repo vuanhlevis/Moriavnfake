@@ -119,7 +119,7 @@ public class TileMapText extends GameObject {
                 TileMember tileMember = new TileMember(tileMem, TileMember.TYPE_STONE, new Vector2D(col * tileSize, y + row * tileSize));
                 if (tileMem == 6 || tileMem == 55) {
                     tileMember = new Brick(tileMem, TileMember.TYPE_BRICK, new Vector2D(col * tileSize, y + row * tileSize));
-                } else if (tileMem == 105 || tileMem == 106 || tileMem == 107 ||tileMem == 94 || tileMem == 93 || tileMem == 92) {
+                } else if (tileMem == 105 || tileMem == 106 || tileMem == 107 || tileMem == 94 || tileMem == 93 || tileMem == 92) {
                     tileMember = new Water(tileMem, TileMember.TYPE_WATER, new Vector2D(col * tileSize, y + row * tileSize));
                 } else if (tileMem == 7) {
                     tileMember = new InfinityStone(tileMem, TileMember.TYPE_INFINITYSTONE, new Vector2D(col * tileSize, y + row * tileSize));
@@ -135,10 +135,12 @@ public class TileMapText extends GameObject {
                     tileMember = new BlueBrick(tileMem, TileMember.TYPE_BLUEBRICK, new Vector2D(col * tileSize, y + row * tileSize));
                 } else if (tileMem == 52) {
                     tileMember = new Brick(tileMem, TileMember.TYPE_NOPLACE, new Vector2D(col * tileSize, y + row * tileSize));
-                } else if (tileMem == 85 ||tileMem == 86 ||tileMem == 87 ||tileMem == 99 || tileMem ==  112) {
+                } else if (tileMem == 85 || tileMem == 86 || tileMem == 87 || tileMem == 99 || tileMem == 112) {
                     tileMember = new Brick(tileMem, TileMember.TYPE_MUSHROOM, new Vector2D(col * tileSize, y + row * tileSize));
                 } else if (tileMem == 36) {
                     tileMember = new Brick(tileMem, TileMember.TYPE_MINERALWATER, new Vector2D(col * tileSize, y + row * tileSize));
+                } else if (tileMem == 116) {
+                    tileMember = new Brick(tileMem, TileMember.TYPE_FLAG, new Vector2D(col * tileSize, y + row * tileSize));
                 } else {
                     tileMember = new Brick(tileMem, TileMember.TYPE_STONE, new Vector2D(col * tileSize, y + row * tileSize));
                 }
