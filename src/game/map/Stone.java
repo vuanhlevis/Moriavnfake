@@ -11,10 +11,12 @@ import game.player.Player;
 public class Stone extends TileMember {
     BoxCollider boxCollider;
     Vector2D velocity;
+    Vector2D savePosition;
     public Stone(int index, int type, Vector2D position) {
 
         super(index, type, position);
         this.velocity = new Vector2D();
+        this.savePosition = position;
         this.boxCollider = new BoxCollider(30,30);
         this.position = position;
         this.type = type;
@@ -24,10 +26,17 @@ public class Stone extends TileMember {
     @Override
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
+        if (this.position.y >= Settings.GAMEPLAY_HEIGHT) this.isActive = false;
+
         this.position.addUp(velocity);
         if (Player.instance.position.y >= Settings.GAMEPLAY_HEIGHT - 50 && !Player.instance.alive) {
             refresh();
         }
+    }
+
+    @Override
+    public Vector2D getStartPosition() {
+        return savePosition;
     }
 
     @Override

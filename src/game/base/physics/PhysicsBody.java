@@ -11,6 +11,7 @@ public interface PhysicsBody {
     void setDissabled(boolean disable);
     int getType();
     Vector2D getVelocity();
+    Vector2D getStartPosition();
 //    boolean isEnemy();
 //    boolean isBrick();
 //    boolean isStone();

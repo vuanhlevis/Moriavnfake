@@ -12,11 +12,13 @@ import game.player.Player;
 public class Brick extends TileMember implements PhysicsBody {
     BoxCollider boxCollider;
     Vector2D velocity;
+    Vector2D savePosition;
 
     public Brick(int index, int type, Vector2D position) {
         super(index, type, position);
         this.velocity = new Vector2D();
-        this.boxCollider = new BoxCollider(30,30);
+        this.savePosition = position;
+        this.boxCollider = new BoxCollider(30, 30);
         this.position = position;
         this.type = type;
         children.add(boxCollider);
@@ -27,10 +29,12 @@ public class Brick extends TileMember implements PhysicsBody {
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
         this.position.addUp(velocity);
-        if (Player.instance.position.y >= Settings.GAMEPLAY_HEIGHT - 50 && !Player.instance.alive) {
+        if (!Player.instance.alive) {
             refresh();
         }
-//        System.out.println(this.boxCollider);
+        if (this.position.y >= Settings.GAMEPLAY_HEIGHT) this.isActive = false;
+
+
     }
 
     @Override
@@ -41,6 +45,11 @@ public class Brick extends TileMember implements PhysicsBody {
     @Override
     public Vector2D getVelocity() {
         return velocity;
+    }
+
+    @Override
+    public Vector2D getStartPosition() {
+        return savePosition;
     }
 
 
@@ -58,5 +67,8 @@ public class Brick extends TileMember implements PhysicsBody {
     public void refresh() {
         super.refresh();
         this.velocity = new Vector2D();
+
+        this.setActive(true);
+        this.position = savePosition;
     }
 }

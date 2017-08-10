@@ -4,9 +4,11 @@ import game.base.FrameCounter;
 import game.base.GameObject;
 import game.base.GameObjectPool;
 import game.base.Settings;
+import game.base.actions.WaitAction;
 import game.base.camera.Camera;
 import game.base.inputs.InputManager;
 import game.enemy.Enemy;
+import game.enemy.EnemySpawner;
 import game.map.TileMapText;
 import game.player.Player;
 
@@ -40,8 +42,9 @@ public class GameWindow extends JFrame{
         setupInputs();
         loadMap();
         addPlayer();
-        addEnemy();
+//        addEnemy();
         addCamera();
+        GameObject gameObject = new EnemySpawner();
         setupStartupScene();
         this.setVisible(true);
     }
@@ -72,7 +75,7 @@ public class GameWindow extends JFrame{
 
     private void addPlayer() {
         Player player = new Player();
-        player.position.set (20 , 100);
+        player.position.set (2000 , 100);
         GameObject.add(player);
     }
 
@@ -108,15 +111,15 @@ public class GameWindow extends JFrame{
     public void loop() {
         while (true) {
 //
-//            if (!Player.instance.alive && new WaitAction(50).run(Player.instance)) {
-//                GameObject.clear();
-//
-//            }
+            if (!Player.instance.alive && new WaitAction(50).run(Player.instance)) {
+
+                GameObject gameObject = new EnemySpawner();
+
+            }
 
             if (Player.instance.position.x >= 2460) {
                 addEnemy = true;
             }
-//            System.out.println(addEnemy);
 
             if (addEnemy && !stopaddEnemy) {
                 Enemy enemy1 = GameObjectPool.recycle(Enemy.class);

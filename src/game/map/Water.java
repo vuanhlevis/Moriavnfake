@@ -10,11 +10,13 @@ import game.player.Player;
  */
 public class Water extends TileMember {
     BoxCollider boxCollider;
+    Vector2D savePosition;
 
     public Water(int index, int type, Vector2D position) {
         super(index, type, position);
         this.boxCollider = new BoxCollider(30, 30);
         this.position = position;
+        this.savePosition = position;
         this.type = type;
         children.add(boxCollider);
     }
@@ -22,9 +24,17 @@ public class Water extends TileMember {
     @Override
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
+
+        if (this.position.y >= Settings.GAMEPLAY_HEIGHT) this.isActive = false;
+
         if (Player.instance.position.y >= Settings.GAMEPLAY_HEIGHT - 50 && !Player.instance.alive) {
             refresh();
         }
+    }
+
+    @Override
+    public Vector2D getStartPosition() {
+        return savePosition;
     }
 
     @Override

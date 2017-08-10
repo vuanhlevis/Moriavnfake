@@ -30,6 +30,7 @@ public class Player extends GameObject implements PhysicsBody {
     public boolean sleep;
 
     PlayerAnimator playerAnimator;
+    FrameCounter frameCounter;
 
     public float gravity = 1f;
     public Vector2D velocity;
@@ -46,6 +47,8 @@ public class Player extends GameObject implements PhysicsBody {
         this.pointion = false;
         this.alive = true;
         this.sleep = false;
+
+        this.frameCounter = new FrameCounter(50);
         this.velocity = new Vector2D();
         this.playerAnimator = new PlayerAnimator();
         this.renderer = playerAnimator;
@@ -132,11 +135,19 @@ public class Player extends GameObject implements PhysicsBody {
         animate();
 
         if (this.position.y > 500) this.alive = false;
-        if (!this.alive) {
+        if (!this.alive && frameCounter.run()) {
+            Physics.reset();
             refresh();
+
+            frameCounter.reset();
         }
 
-//        System.out.println(this.position);
+        PhysicsBody body = Physics.checkPointion(Brick.class, TYPE_BRICK);
+        if (body != null) {
+            if (body.getType() == TYPE_BRICK && body.getBoxCollider().screenPosition.x > 1320 && body.getBoxCollider().screenPosition.x < 1530)
+                System.out.println(body.getStartPosition());
+        }
+
 
 
     }
@@ -209,6 +220,13 @@ public class Player extends GameObject implements PhysicsBody {
 
     private void moveVertical() {
         PhysicsBody body = Physics.bodyInRect(position.add(0, velocity.y), boxCollider.width, boxCollider.height, standclass);
+        if (body != null && body.getType() == TYPE_ELEVATOR) {
+            if (body.getType() == TYPE_ELEVATOR && this.position.x >= 3250 && this.position.x < 3320) {
+                body.setActive(false);
+            }
+        }
+
+
         if (body != null && alive) {
 
             float detalY = Mathx.sign(velocity.y);
@@ -228,6 +246,9 @@ public class Player extends GameObject implements PhysicsBody {
                 brickAnomator.position = body.getBoxCollider().screenPosition;
 
                 body.setActive(false);
+                if (!this.alive) {
+                    body.setActive(true);
+                }
             }
 
             if (body.getType() == TYPE_ENEMY && this.velocity.y > 0) {
@@ -245,6 +266,7 @@ public class Player extends GameObject implements PhysicsBody {
 
             if (body.getType() == TYPE_NOPLACE) {
                 body.getVelocity().set(0, 5);
+
             }
 
 
@@ -270,14 +292,12 @@ public class Player extends GameObject implements PhysicsBody {
                 this.velocity.y = 2;
             }
 
-            if (body.getType() == TYPE_ELEVATOR && this.position.x >= 3250 && this.position.x < 3320) {
-                body.setActive(false);
-            }
 
             if (body.getType() == TYPE_BRICK && body.getBoxCollider().screenPosition.x > 1320 && body.getBoxCollider().screenPosition.x < 1530) {
-                body.getVelocity().set(0, 10);
-            }
 
+                body.getVelocity().set(0, 10);
+
+            }
 
 
             if (this.alive && body.getType() != TYPE_ENEMY) {
@@ -293,6 +313,7 @@ public class Player extends GameObject implements PhysicsBody {
             }
 
         }
+
 
     }
 
@@ -338,6 +359,11 @@ public class Player extends GameObject implements PhysicsBody {
     @Override
     public Vector2D getVelocity() {
         return velocity;
+    }
+
+    @Override
+    public Vector2D getStartPosition() {
+        return null;
     }
 
     @Override

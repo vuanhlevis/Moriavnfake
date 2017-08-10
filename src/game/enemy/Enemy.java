@@ -3,6 +3,7 @@ package game.enemy;
 import game.Utils;
 import game.base.FrameCounter;
 import game.base.GameObject;
+import game.base.Settings;
 import game.base.Vector2D;
 import game.base.physics.BoxCollider;
 import game.base.physics.PhysicsBody;
@@ -24,6 +25,7 @@ public class Enemy extends GameObject implements PhysicsBody {
         this.boxCollider = new BoxCollider(29,29);
         this.renderer = new ImageRenderer(Utils.loadAssetImage("yellow_square.jpg"));
         this.velocity = new Vector2D();
+        this.position.set(600,10);
         children.add(boxCollider);
         velocity.x = -0.5f;
     }
@@ -33,6 +35,9 @@ public class Enemy extends GameObject implements PhysicsBody {
     public void run(Vector2D parentPosition) {
 
         super.run(parentPosition);
+
+        if (this.position.y >= Settings.GAMEPLAY_HEIGHT) this.isActive = false;
+
 
         this.velocity.y +=  Player.instance.gravity;
         this.moveVertical(boxCollider,screenPosition,this.velocity);
@@ -47,6 +52,8 @@ public class Enemy extends GameObject implements PhysicsBody {
             frameCounter.reset();
             frameCounter = new FrameCounter(5000);
         }
+
+//        System.out.println(Player.instance.alive);
 
 
     }
@@ -73,8 +80,19 @@ public class Enemy extends GameObject implements PhysicsBody {
     }
 
     @Override
+    public Vector2D getStartPosition() {
+        return null;
+    }
+
+    @Override
     public BoxCollider getBoxCollider() {
         return boxCollider;
     }
 
+    @Override
+    public void refresh() {
+        super.refresh();
+
+        this.isActive = true;
+    }
 }

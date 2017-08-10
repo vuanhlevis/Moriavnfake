@@ -4,11 +4,26 @@ import game.base.Vector2D;
 
 import java.util.Vector;
 
+import static game.map.TileMember.TYPE_INFINITYSTONE;
+
 /**
  * Created by levua on 8/3/2017.
  */
 public class Physics {
     private static Vector<PhysicsBody> bodies = new Vector<>();
+
+    public static void reset() {
+
+        for (PhysicsBody body : bodies) {
+            if (body.getType() != TYPE_INFINITYSTONE)
+                body.setActive(true);
+            else body.setActive(false);
+
+            if (body.getStartPosition() != null)
+                body.getBoxCollider().screenPosition.set(body.getStartPosition());
+        }
+
+    }
 
     public static void add(PhysicsBody body) {
         bodies.add(body);
@@ -63,14 +78,14 @@ public class Physics {
         return null;
     }
 
-    public static <T extends PhysicsBody> T bodyInRectD (Vector2D position, float width, float height, Class<T> classz ) {
+    public static <T extends PhysicsBody> T bodyInRectD(Vector2D position, float width, float height, Class<T> classz) {
         float left = position.x - width / 2;
         float right = position.x + width / 2;
         float top = position.y - height / 2;
         float bottom = position.y + height / 2;
 
         for (PhysicsBody body : bodies) {
-            if (!body.isActive() && body.getBoxCollider().collideWith(top,bottom,left,right)) {
+            if (!body.isActive() && body.getBoxCollider().collideWith(top, bottom, left, right)) {
                 if (body.getClass() == classz) {
                     return (T) body;
                 }

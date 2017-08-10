@@ -87,6 +87,11 @@ public class TileMember extends GameObject implements PhysicsBody {
         return velocity;
     }
 
+    @Override
+    public Vector2D getStartPosition() {
+        return null;
+    }
+
     public void reset(){
         if (this.dissable == false){
             this.isActive = true;

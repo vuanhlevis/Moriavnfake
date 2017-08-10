@@ -14,11 +14,14 @@ public class BlueBrick extends TileMember implements PhysicsBody {
     public boolean status;
     public Vector2D velocity;
     BoxCollider boxCollider;
+    Vector2D savePosition;
+
     public BlueBrick(int index, int type, Vector2D position) {
         super(index, type, position);
         instance = this;
         this.status = false;
         this.velocity = new Vector2D();
+        this.savePosition = position;
         this.boxCollider = new BoxCollider(30,30);
         this.position = position;
         this.type = type;
@@ -29,11 +32,14 @@ public class BlueBrick extends TileMember implements PhysicsBody {
     @Override
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
+
+        if (this.position.y >= Settings.GAMEPLAY_HEIGHT) this.isActive = false;
+
         if (status) {
             this.position.addUp(0,10);
         }
 
-        if (Player.instance.position.y >= Settings.GAMEPLAY_HEIGHT - 50 && !Player.instance.alive) {
+        if (Player.instance.position.y >= Settings.GAMEPLAY_HEIGHT && !Player.instance.alive) {
             refresh();
         }
 
@@ -49,6 +55,11 @@ public class BlueBrick extends TileMember implements PhysicsBody {
     @Override
     public Vector2D getVelocity() {
         return velocity;
+    }
+
+    @Override
+    public Vector2D getStartPosition() {
+        return savePosition;
     }
 
 
