@@ -9,13 +9,11 @@ import game.player.Player;
 
 import java.awt.*;
 
-import static game.map.Tube.tubes;
-
 /**
  * Created by levua on 8/9/2017.
  */
 public class PlayerAnimator extends GameObject implements Renderer {
-
+    private boolean next;
     private Animation leftAnimation;
     private Animation rightAnimation;
     private Animation upAnimation;
@@ -27,6 +25,7 @@ public class PlayerAnimator extends GameObject implements Renderer {
     private Animation currentAnimation;
 
     public PlayerAnimator() {
+        this.next = true;
         leftAnimation = new Animation(Utils.loadAssetImage("chicken/left/gaLeft1_32.png"),
                 Utils.loadAssetImage("chicken/left/gaLeft2_32.png"),
                 Utils.loadAssetImage("chicken/left/gaLeft3_32.png")
@@ -84,24 +83,38 @@ public class PlayerAnimator extends GameObject implements Renderer {
         if (player.velocity.x < 0 && player.velocity.y == 0 || player.velocity.y == 0.1f) {
             currentAnimation = leftAnimation;
 
-        } else if (player.velocity.x > 0 && player.velocity.y == 0 || player.velocity.y == 0.1f) {
+        } else if (player.velocity.x > 0 && player.velocity.y == 0) {
             currentAnimation = rightAnimation;
         } else if (player.sleep) {
             currentAnimation = downAnimation;
             if (currentAnimation.isFinished()) {
-                player.position.set(tubes.get(1).position.x - 15, tubes.get(1).position.y - 30);
+                if (player.position.x >= 4470 && player.position.x <= 4495 && next) {
+                    player.position.set(405,240);
+                    next = false;
+                } else if (player.position.x <= 4615 && player.position.x >= 4595 && next) {
+                    player.position.set(4725,300);
+                    next = false;
+                } else if (player.position.x <= 4795 && player.position.x >= 4715 && next) {
+                    player.position.set(4485,300);
+                    next = false;
+                } else if (player.position.x >= 4800 && player.position.x <= 4860 && next) {
+                    player.position.set(5025,300);
+                }
+
+//                player.position.set(tubes.get(1).position.x - 15, tubes.get(1).position.y - 30);
                 currentAnimation = upAnimation;
                 if (currentAnimation.isFinished()) {
                     player.sleep = false;
+                    next = true;
                     currentAnimation.reset();
                     downAnimation.reset();
                 }
             }
 
-        } else if (player.velocity.y !=0 && player.velocity.y != 0.1f && player.velocity.x > 0) {
+        } else if (player.velocity.y != 0 && player.velocity.x > 0) {
             currentAnimation = flyRightAnimation;
         }
-        else if (player.velocity.y !=0 && player.velocity.y != 0.1f  && player.velocity.x < 0) {
+        else if (player.velocity.y != 0 && player.velocity.x < 0) {
             currentAnimation = flyLeftAnimation;
         }
         else currentAnimation = straightAnimation;

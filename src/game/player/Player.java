@@ -21,8 +21,9 @@ public class Player extends GameObject implements PhysicsBody {
     Contraints contraints;
     boolean checkPoint;
     public boolean alive;
-    Class standclass[] = {Brick.class, Stone.class, InfinityStone.class, Water.class, Enemy.class, Tube.class};
+    Class standclass[] = {Brick.class, Stone.class, InfinityStone.class, Water.class, Enemy.class};
     WaitAction waitAction;
+    boolean candown;
 
     boolean pointion;
     public boolean moveAuto;
@@ -39,16 +40,17 @@ public class Player extends GameObject implements PhysicsBody {
 
     public Player() {
         super();
+        this.candown = false;
         this.checkPoint = false;
         this.moveAuto = false;
         this.pointion = false;
+        this.alive = true;
         this.sleep = false;
         this.velocity = new Vector2D();
         this.playerAnimator = new PlayerAnimator();
         this.renderer = playerAnimator;
         this.boxCollider = new BoxCollider(29, 29);
         this.children.add(boxCollider);
-        this.alive = true;
         this.waitAction = new WaitAction(15);
         contraints = new Contraints(0, Settings.GAMEPLAY_HEIGHT, 0, Settings.MAP_WIDTH);
         instance = this;
@@ -57,7 +59,6 @@ public class Player extends GameObject implements PhysicsBody {
     @Override
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
-//        System.out.println(this.position);
 
         this.velocity.y += gravity;
 
@@ -96,7 +97,7 @@ public class Player extends GameObject implements PhysicsBody {
         }
 
 
-        if (moveAuto && velocity.y <= 0.2) {
+        if (moveAuto && velocity.y <= 0.2 && this.position.x < 5727) {
             this.position.x += 1;
         }
 
@@ -108,7 +109,8 @@ public class Player extends GameObject implements PhysicsBody {
             waitAction.reset();
         }
 
-        if (Tube.instance.canGoDown() && InputManager.instance.downPressed && alive) {
+
+        if (candown && InputManager.instance.downPressed && alive) {
             sleep = true;
         }
 
@@ -130,6 +132,11 @@ public class Player extends GameObject implements PhysicsBody {
         animate();
 
         if (this.position.y > 500) this.alive = false;
+        if (!this.alive) {
+            refresh();
+        }
+
+//        System.out.println(this.position);
 
 
     }
@@ -209,6 +216,12 @@ public class Player extends GameObject implements PhysicsBody {
             while (Physics.bodyInRect(position.add(0, detalY), boxCollider.width, boxCollider.height, standclass) == null) {
                 position.addUp(0, detalY);
             }
+
+            if (body.getType() == TYPE_CHECKPOINT) {
+                checkPoint = true;
+                body.setActive(false);
+            }
+
             if ((velocity.y < 0 && body.getType() == TYPE_BRICK && body.getType() != TYPE_CHECKPOINT)) {
                 this.velocity.y = -5;
                 BrickAnomator brickAnomator = GameObjectPool.recycle(BrickAnomator.class);
@@ -226,8 +239,8 @@ public class Player extends GameObject implements PhysicsBody {
             }
 
             if (body.getType() == TYPE_MINERALWATER) {
-                this.position.x += 80;
-                this.position.y -= 60;
+                sleep = true;
+//                this.position.x += 80;
             }
 
             if (body.getType() == TYPE_NOPLACE) {
@@ -257,20 +270,27 @@ public class Player extends GameObject implements PhysicsBody {
                 this.velocity.y = 2;
             }
 
+            if (body.getType() == TYPE_ELEVATOR && this.position.x >= 3250 && this.position.x < 3320) {
+                body.setActive(false);
+            }
+
             if (body.getType() == TYPE_BRICK && body.getBoxCollider().screenPosition.x > 1320 && body.getBoxCollider().screenPosition.x < 1530) {
                 body.getVelocity().set(0, 10);
             }
 
-            if (body.getType() == TYPE_CHECKPOINT) {
-                checkPoint = true;
-                body.setActive(false);
-            }
+
 
             if (this.alive && body.getType() != TYPE_ENEMY) {
                 this.velocity.y = 0;
             }
 
-
+            if (body.getType() == TYPE_TUBE) {
+                if (this.position.x >= 4470 && this.position.x <= 4495
+                        || (this.position.x >= 4595 && this.position.x <= 4615)
+                        || (this.position.x >= 4715 && this.position.x <= 4735))
+                    candown = true;
+                else candown = false;
+            }
 
         }
 
@@ -329,5 +349,6 @@ public class Player extends GameObject implements PhysicsBody {
         this.pointion = false;
         this.sleep = false;
         this.alive = true;
+        this.position.set(20, 100);
     }
 }

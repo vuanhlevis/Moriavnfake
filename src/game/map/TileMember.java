@@ -24,6 +24,7 @@ public class TileMember extends GameObject implements PhysicsBody {
     public static final int TYPE_FLAG = 10;
     public static final int TYPE_TUBE = 11;
     public static final int TYPE_CHECKPOINT = 12;
+    public static final int TYPE_ELEVATOR = 13;
     public static final boolean TYPE_SPECIAL = true;
     Vector2D velocity;
     public int type; // 0 => STON, 1 => BRICK, .v.v.v
