@@ -41,10 +41,11 @@ public class Enemy extends GameObject implements PhysicsBody {
         this.moveHorizontal(boxCollider,screenPosition,velocity);
         this.position.x += velocity.x;
 
+
         if (frameCounter.run()) {
             velocity.x *= -1;
             frameCounter.reset();
-            frameCounter = new FrameCounter(200);
+            frameCounter = new FrameCounter(5000);
         }
 
 

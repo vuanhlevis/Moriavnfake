@@ -21,7 +21,7 @@ public class MoveAll {
             while (Physics.bodyInRect(position.add(detalX, 0), boxCollider.width, boxCollider.height, stand) == null) {
                 position.addUp(detalX, 0);
             }
-            velocity.x = 0;
+            velocity.x *= -1;
         }
     }
 
