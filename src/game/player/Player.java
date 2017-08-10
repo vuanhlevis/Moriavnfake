@@ -209,7 +209,7 @@ public class Player extends GameObject implements PhysicsBody {
             while (Physics.bodyInRect(position.add(0, detalY), boxCollider.width, boxCollider.height, standclass) == null) {
                 position.addUp(0, detalY);
             }
-            if ((velocity.y < 0 && body.getType() == TYPE_BRICK)) {
+            if ((velocity.y < 0 && body.getType() == TYPE_BRICK && body.getType() != TYPE_CHECKPOINT)) {
                 this.velocity.y = -5;
                 BrickAnomator brickAnomator = GameObjectPool.recycle(BrickAnomator.class);
                 brickAnomator.position = body.getBoxCollider().screenPosition;

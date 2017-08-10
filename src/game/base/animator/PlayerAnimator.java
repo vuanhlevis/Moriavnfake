@@ -21,6 +21,8 @@ public class PlayerAnimator extends GameObject implements Renderer {
     private Animation upAnimation;
     private Animation downAnimation;
     private Animation straightAnimation;
+    private Animation flyLeftAnimation;
+    private Animation flyRightAnimation;
 
     private Animation currentAnimation;
 
@@ -50,7 +52,7 @@ public class PlayerAnimator extends GameObject implements Renderer {
                 Utils.loadAssetImage("chicken/down/gaDown8_32.png"),
                 Utils.loadAssetImage("chicken/down/gaDown9_32.png"),
                 Utils.loadAssetImage("chicken/down/gaDown10_32.png")
-                );
+        );
 
         upAnimation = new Animation(
                 Utils.loadAssetImage("chicken/up/gaUp1_32.png"),
@@ -64,20 +66,30 @@ public class PlayerAnimator extends GameObject implements Renderer {
                 Utils.loadAssetImage("chicken/up/gaUp9_32.png"),
                 Utils.loadAssetImage("chicken/up/gaUp10_32.png")
 
-                );
+        );
+
+        flyLeftAnimation = new Animation(
+                Utils.loadAssetImage("chicken/fly/gaFlyLeft1_32.png"),
+                Utils.loadAssetImage("chicken/fly/gaFlyLeft2_32.png")
+        );
+
+        flyRightAnimation = new Animation(
+                Utils.loadAssetImage("chicken/fly/gaFlyRight1_32.png"),
+                Utils.loadAssetImage("chicken/fly/gaFlyRight2_32.png")
+        );
 
     }
 
     public void run(Player player) {
-        if (player.velocity.x < 0) {
+        if (player.velocity.x < 0 && player.velocity.y == 0 || player.velocity.y == 0.1f) {
             currentAnimation = leftAnimation;
 
-        } else if (player.velocity.x > 0) {
+        } else if (player.velocity.x > 0 && player.velocity.y == 0 || player.velocity.y == 0.1f) {
             currentAnimation = rightAnimation;
-        } else if (player.sleep){
+        } else if (player.sleep) {
             currentAnimation = downAnimation;
             if (currentAnimation.isFinished()) {
-                player.position.set(tubes.get(1).position.x, tubes.get(1).position.y - 30);
+                player.position.set(tubes.get(1).position.x - 15, tubes.get(1).position.y - 30);
                 currentAnimation = upAnimation;
                 if (currentAnimation.isFinished()) {
                     player.sleep = false;
@@ -86,15 +98,22 @@ public class PlayerAnimator extends GameObject implements Renderer {
                 }
             }
 
+        } else if (player.velocity.y !=0 && player.velocity.y != 0.1f && player.velocity.x > 0) {
+            currentAnimation = flyRightAnimation;
+        }
+        else if (player.velocity.y !=0 && player.velocity.y != 0.1f  && player.velocity.x < 0) {
+            currentAnimation = flyLeftAnimation;
         }
         else currentAnimation = straightAnimation;
+
+//        System.out.println(player.velocity);
     }
 
 
     @Override
     public void render(Graphics g, Vector2D position) {
-        if (currentAnimation!= null) {
-            currentAnimation.render(g,position);
+        if (currentAnimation != null) {
+            currentAnimation.render(g, position);
         }
     }
 
