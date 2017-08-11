@@ -33,7 +33,7 @@ public class TileMember extends GameObject implements PhysicsBody {
     public TileMember(int index, int type, Vector2D position) {
 
         super();
-        String path = "assets/tilemap/" + index + ".png";
+        String path = "assets/tilemap/" + index + ".bmp";
 
         imageRenderer = new ImageRenderer(Utils.loadImage(path));
         imageRenderer.anchor = new Vector2D(0.5f, 0.5f);
@@ -66,6 +66,11 @@ public class TileMember extends GameObject implements PhysicsBody {
         if (this.position.y >= Settings.GAMEPLAY_HEIGHT) this.setActive(false);
 
 
+    }
+
+    @Override
+    public Vector2D getPosition() {
+        return this.position;
     }
 
 //    private boolean isDisabled;

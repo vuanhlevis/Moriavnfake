@@ -64,6 +64,11 @@ public class Brick extends TileMember implements PhysicsBody {
     }
 
     @Override
+    public Vector2D getPosition() {
+        return this.position;
+    }
+
+    @Override
     public void refresh() {
         super.refresh();
         this.velocity = new Vector2D();

@@ -47,7 +47,7 @@ public class GameWindow extends JFrame{
 //        addEnemy();
         addCamera();
         GameObject gameObject = new EnemySpawner();
-
+        
         this.setVisible(true);
     }
 

@@ -5,6 +5,7 @@ import game.base.Vector2D;
 import java.util.Vector;
 
 import static game.map.TileMember.TYPE_INFINITYSTONE;
+import static game.map.TileMember.TYPE_NOPLACE;
 
 /**
  * Created by levua on 8/3/2017.
@@ -16,8 +17,16 @@ public class Physics {
 
         for (PhysicsBody body : bodies) {
 
-            if (body.getStartPosition() != null)
-                body.getBoxCollider().screenPosition.set(body.getStartPosition());
+            if (body.getStartPosition()!= null && body.getType() == TYPE_NOPLACE && !body.isActive()) {
+//                System.out.println(body.getBoxCollider().screenPosition);
+//                if (body.getBoxCollider().screenPosition != body.getStartPosition()) {
+//                    System.out.println(body.getPosition());
+//                    System.out.println(body.getStartPosition());
+////                    body.getBoxCollider().screenPosition.set(body.getStartPosition());
+//                }
+                body.setActive(true);
+
+            }
 
             if (body.getType() != TYPE_INFINITYSTONE)
                 body.setActive(true);

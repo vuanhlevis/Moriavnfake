@@ -273,6 +273,7 @@ public class Player extends GameObject implements PhysicsBody {
 
             if (body.getType() == TYPE_NOPLACE) {
                 body.setActive(false);
+                this.velocity.y = -10;
 
             }
 
@@ -298,6 +299,13 @@ public class Player extends GameObject implements PhysicsBody {
                 this.position.x += 30;
                 this.velocity.y = 2;
             }
+
+
+//            if (body.getType() == TYPE_BRICK && body.getBoxCollider().screenPosition.x > 1320 && body.getBoxCollider().screenPosition.x < 1530) {
+//
+//                body.getVelocity().set(0, 10);
+//
+//            }
 
 
             if (this.alive && body.getType() != TYPE_ENEMY) {
@@ -354,6 +362,11 @@ public class Player extends GameObject implements PhysicsBody {
     @Override
     public BoxCollider getBoxCollider() {
         return boxCollider;
+    }
+
+    @Override
+    public Vector2D getPosition() {
+        return this.position;
     }
 
     @Override

@@ -1,13 +1,12 @@
 package game.enemy;
 
-import game.Utils;
 import game.base.FrameCounter;
 import game.base.GameObject;
 import game.base.Settings;
 import game.base.Vector2D;
+import game.base.animator.EnemyAnimator;
 import game.base.physics.BoxCollider;
 import game.base.physics.PhysicsBody;
-import game.base.renderer.ImageRenderer;
 import game.player.Player;
 
 import static game.map.TileMember.TYPE_ENEMY;
@@ -19,11 +18,13 @@ public class Enemy extends GameObject implements PhysicsBody {
     BoxCollider boxCollider;
     public Vector2D velocity;
     public FrameCounter frameCounter;
+    EnemyAnimator enemyAnimator;
     public Enemy() {
         super();
         this.frameCounter = new FrameCounter(150);
         this.boxCollider = new BoxCollider(29,29);
-        this.renderer = new ImageRenderer(Utils.loadAssetImage("yellow_square.jpg"));
+        enemyAnimator = new EnemyAnimator();
+        this.renderer = enemyAnimator;
         this.velocity = new Vector2D();
         this.position.set(600,10);
         children.add(boxCollider);
@@ -35,6 +36,8 @@ public class Enemy extends GameObject implements PhysicsBody {
     public void run(Vector2D parentPosition) {
 
         super.run(parentPosition);
+
+        animate();
 
         if (this.position.y >= Settings.GAMEPLAY_HEIGHT) this.isActive = false;
 
@@ -58,6 +61,14 @@ public class Enemy extends GameObject implements PhysicsBody {
 
     }
 
+    private void animate() {
+        enemyAnimator.run(this);
+    }
+
+    @Override
+    public Vector2D getPosition() {
+        return this.position;
+    }
 
     @Override
     public boolean isDisabled() {

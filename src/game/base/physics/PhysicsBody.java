@@ -24,5 +24,7 @@ public interface PhysicsBody {
 
     BoxCollider getBoxCollider();
 
+    Vector2D getPosition();
+
 //    void setActive(boolean active);
 }

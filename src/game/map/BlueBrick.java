@@ -49,6 +49,11 @@ public class BlueBrick extends TileMember implements PhysicsBody {
     }
 
     @Override
+    public Vector2D getPosition() {
+        return this.position;
+    }
+
+    @Override
     public int getType() {
         return this.type;
     }
