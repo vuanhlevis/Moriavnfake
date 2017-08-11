@@ -20,6 +20,7 @@ public class EnemyAnimator extends GameObject implements Renderer {
     public EnemyAnimator() {
         enemyAnimation = new Animation(
                 Utils.loadImage("assets/images/Alien1.png"),
+                Utils.loadImage("assets/images/Alien3.png"),
                 Utils.loadImage("assets/images/Alien2.png"));
     }
 

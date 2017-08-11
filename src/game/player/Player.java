@@ -65,7 +65,7 @@ public class Player extends GameObject implements PhysicsBody {
     @Override
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
-        
+
         this.velocity.y += gravity;
 
         this.velocity.x = 0;
