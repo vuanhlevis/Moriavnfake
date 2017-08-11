@@ -33,7 +33,7 @@ public class TileMember extends GameObject implements PhysicsBody {
     public TileMember(int index, int type, Vector2D position) {
 
         super();
-        String path = "assets/tilemap/" + index + ".bmp";
+        String path = "assets/tilemap/" + index + ".png";
 
         imageRenderer = new ImageRenderer(Utils.loadImage(path));
         imageRenderer.anchor = new Vector2D(0.5f, 0.5f);
