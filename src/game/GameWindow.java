@@ -11,6 +11,7 @@ import game.enemy.Enemy;
 import game.enemy.EnemySpawner;
 import game.map.TileMapText;
 import game.player.Player;
+import game.scenes.BackGround;
 
 import javax.swing.*;
 import java.awt.*;
@@ -40,12 +41,13 @@ public class GameWindow extends JFrame{
         setupWindow();
         setupBackBuffer();
         setupInputs();
+        setupStartupScene();
         loadMap();
         addPlayer();
 //        addEnemy();
         addCamera();
         GameObject gameObject = new EnemySpawner();
-        setupStartupScene();
+        
         this.setVisible(true);
     }
 
@@ -80,7 +82,9 @@ public class GameWindow extends JFrame{
     }
 
     private void setupStartupScene() {
-
+        BackGround backGround = new BackGround();
+        backGround.position.y = Settings.GAMEPLAY_HEIGHT;
+        GameObject.add(backGround);
     }
 
     private void setupBackBuffer() {
@@ -92,7 +96,6 @@ public class GameWindow extends JFrame{
         this.addKeyListener(new KeyListener() {
             @Override
             public void keyTyped(KeyEvent e) {
-
             }
 
             @Override

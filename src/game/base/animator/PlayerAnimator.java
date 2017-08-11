@@ -28,17 +28,22 @@ public class PlayerAnimator extends GameObject implements Renderer {
         this.next = true;
         leftAnimation = new Animation(Utils.loadAssetImage("chicken/left/gaLeft1_32.png"),
                 Utils.loadAssetImage("chicken/left/gaLeft2_32.png"),
-                Utils.loadAssetImage("chicken/left/gaLeft3_32.png")
+                Utils.loadAssetImage("chicken/left/gaLeft3_32.png"),
+                Utils.loadAssetImage("chicken/left/gaLeft2_32.png")
         );
 
         rightAnimation = new Animation(Utils.loadAssetImage("chicken/right/gaRight1_32.png"),
                 Utils.loadAssetImage("chicken/right/gaRight2_32.png"),
-                Utils.loadAssetImage("chicken/right/gaRight3_32.png")
-        );
+                Utils.loadAssetImage("chicken/right/gaRight3_32.png"),
+                Utils.loadAssetImage("chicken/right/gaRight2_32.png")
+                );
 
-        straightAnimation = new Animation(Utils.loadAssetImage("chicken/gaStraight1_32.png"),
+        straightAnimation = new Animation(
+                Utils.loadAssetImage("chicken/gaStraight1_32.png"),
                 Utils.loadAssetImage("chicken/gaStraight2_32.png"),
-                Utils.loadAssetImage("chicken/gaStraight3_32.png"));
+                Utils.loadAssetImage("chicken/gaStraight3_32.png"),
+                Utils.loadAssetImage("chicken/gaStraight2_32.png")
+        );
 
         downAnimation = new Animation(Utils.loadAssetImage("chicken/down/gaDown0_32.png"),
                 Utils.loadAssetImage("chicken/down/gaDown1_32.png"),
