@@ -15,8 +15,8 @@ public class BrickAnomator extends GameObject implements Renderer {
 
     public BrickAnomator() {
         brickExplosionAnimation = new Animation(
-                Utils.loadImage("assets/images/brick explosion/explosion1.png"),
-                Utils.loadImage("assets/images/brick explosion/explosion2.png"),
+               // Utils.loadImage("assets/images/brick explosion/explosion1.png"),
+               // Utils.loadImage("assets/images/brick explosion/explosion2.png"),
                 Utils.loadImage("assets/images/brick explosion/explosion3.png"),
                 Utils.loadImage("assets/images/brick explosion/explosion4.png"),
                 Utils.loadImage("assets/images/brick explosion/explosion5.png"),
