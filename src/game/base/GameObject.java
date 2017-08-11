@@ -88,6 +88,7 @@ public class GameObject extends MoveAll {
         for (GameObject child : children) {
             child.run(this.screenPosition);
         }
+
     }
 
     public void runActions() {

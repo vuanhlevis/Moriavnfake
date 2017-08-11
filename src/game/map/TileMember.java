@@ -2,6 +2,7 @@ package game.map;
 
 import game.Utils;
 import game.base.GameObject;
+import game.base.Settings;
 import game.base.Vector2D;
 import game.base.physics.BoxCollider;
 import game.base.physics.PhysicsBody;
@@ -62,6 +63,8 @@ public class TileMember extends GameObject implements PhysicsBody {
     @Override
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
+        if (this.position.y >= Settings.GAMEPLAY_HEIGHT) this.setActive(false);
+
 
     }
 

@@ -63,6 +63,10 @@ public class Player extends GameObject implements PhysicsBody {
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
 
+
+
+//        System.out.println(this.position);
+
         this.velocity.y += gravity;
 
         this.velocity.x = 0;
@@ -138,6 +142,9 @@ public class Player extends GameObject implements PhysicsBody {
         if (!this.alive && frameCounter.run()) {
             Physics.reset();
             refresh();
+            if (checkPoint) {
+                this.position.set(3025,120);
+            }
 
             frameCounter.reset();
         }
@@ -265,7 +272,7 @@ public class Player extends GameObject implements PhysicsBody {
             }
 
             if (body.getType() == TYPE_NOPLACE) {
-                body.getVelocity().set(0, 5);
+                body.getVelocity().set(0, 10);
 
             }
 
@@ -370,7 +377,7 @@ public class Player extends GameObject implements PhysicsBody {
     public void refresh() {
         super.refresh();
         playerAnimator.refresh();
-        checkPoint = false;
+
         this.moveAuto = false;
         this.pointion = false;
         this.sleep = false;
