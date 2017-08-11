@@ -42,6 +42,7 @@ public class BlueBrick extends TileMember implements PhysicsBody {
         if (Player.instance.position.y >= Settings.GAMEPLAY_HEIGHT && !Player.instance.alive) {
             refresh();
         }
+        if (this.position.y >= Settings.GAMEPLAY_HEIGHT) this.setActive(false);
 
 //        System.out.println(this.position + "hihi");
 //        System.out.println(Player.instance.getBoxCollider());

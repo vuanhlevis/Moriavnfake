@@ -55,13 +55,17 @@ public class Player extends GameObject implements PhysicsBody {
         this.boxCollider = new BoxCollider(29, 29);
         this.children.add(boxCollider);
         this.waitAction = new WaitAction(15);
-        contraints = new Contraints(0, Settings.GAMEPLAY_HEIGHT, 0, Settings.MAP_WIDTH);
+        contraints = new Contraints(0, Settings.GAMEPLAY_HEIGHT + 50, 0, Settings.MAP_WIDTH);
         instance = this;
     }
 
     @Override
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
+
+
+
+//        System.out.println(this.position);
 
         this.velocity.y += gravity;
 
@@ -126,7 +130,7 @@ public class Player extends GameObject implements PhysicsBody {
 
         hitEnemy();
 
-        hitStone();
+//        hitStone();
 
         this.position.y += velocity.y;
         moveSpecial();
@@ -138,6 +142,9 @@ public class Player extends GameObject implements PhysicsBody {
         if (!this.alive && frameCounter.run()) {
             Physics.reset();
             refresh();
+            if (checkPoint) {
+                this.position.set(3025,120);
+            }
 
             frameCounter.reset();
         }
@@ -160,28 +167,28 @@ public class Player extends GameObject implements PhysicsBody {
 
     }
 
-
-    private void hitStone() {
-        float deltaX = velocity.x > 0 ? 1 : -1;
-        PhysicsBody body = Physics.bodyInRect(position.add(velocity.x, 0), boxCollider.width, boxCollider.height, TileMember.class);
-        if (body != null && body.getType() == TYPE_STONE && alive) {
-            while (Physics.bodyInRect(position.add(deltaX, 0), boxCollider.width, boxCollider.height, TileMember.class) == null) {
-                position.addUp(deltaX, 0);
-            }
-            this.velocity.x = 0;
-        }
-
-
-        float detalY = velocity.y > 0 ? 1 : -1;
-        PhysicsBody boody = Physics.bodyInRect(position.add(0, velocity.y), boxCollider.width, boxCollider.height, Stone.class);
-        if (boody != null && body.getType() == TYPE_STONE && alive) {
-            while (Physics.bodyInRect(position.add(0, detalY), boxCollider.width, boxCollider.height, Stone.class) == null) {
-                position.addUp(0, detalY);
-            }
-            this.velocity.y = 0;
-
-        }
-    }
+//
+//    private void hitStone() {
+//        float deltaX = velocity.x > 0 ? 1 : -1;
+//        PhysicsBody body = Physics.bodyInRect(position.add(velocity.x, 0), boxCollider.width, boxCollider.height, TileMember.class);
+//        if (body != null && body.getType() == TYPE_STONE && alive) {
+//            while (Physics.bodyInRect(position.add(deltaX, 0), boxCollider.width, boxCollider.height, TileMember.class) == null) {
+//                position.addUp(deltaX, 0);
+//            }
+//            this.velocity.x = 0;
+//        }
+//
+//
+//        float detalY = velocity.y > 0 ? 1 : -1;
+//        PhysicsBody boody = Physics.bodyInRect(position.add(0, velocity.y), boxCollider.width, boxCollider.height, Stone.class);
+//        if (boody != null && body.getType() == TYPE_STONE && alive) {
+//            while (Physics.bodyInRect(position.add(0, detalY), boxCollider.width, boxCollider.height, Stone.class) == null) {
+//                position.addUp(0, detalY);
+//            }
+//            this.velocity.y = 0;
+//
+//        }
+//    }
 
     private void moveHorizontal() {
         PhysicsBody body = Physics.bodyInRect(position.add(velocity.x, 0), boxCollider.width, boxCollider.height, standclass);
@@ -265,7 +272,7 @@ public class Player extends GameObject implements PhysicsBody {
             }
 
             if (body.getType() == TYPE_NOPLACE) {
-                body.getVelocity().set(0, 5);
+                body.getVelocity().set(0, 10);
 
             }
 
@@ -370,7 +377,7 @@ public class Player extends GameObject implements PhysicsBody {
     public void refresh() {
         super.refresh();
         playerAnimator.refresh();
-        checkPoint = false;
+
         this.moveAuto = false;
         this.pointion = false;
         this.sleep = false;

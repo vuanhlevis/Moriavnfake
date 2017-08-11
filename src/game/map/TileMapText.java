@@ -151,7 +151,7 @@ public class TileMapText extends GameObject {
                     tileMember = new TileMember(tileMem, TileMember.TYPE_FLAG, new Vector2D(col * tileSize, y + row * tileSize));
                 }
                 else {
-                    tileMember = new Brick(tileMem, TileMember.TYPE_STONE, new Vector2D(col * tileSize, y + row * tileSize));
+                    tileMember = new Stone(tileMem, TileMember.TYPE_STONE, new Vector2D(col * tileSize, y + row * tileSize));
                 }
 
                 if (tileMem != 0) {

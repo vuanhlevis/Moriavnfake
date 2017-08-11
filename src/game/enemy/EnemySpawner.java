@@ -46,8 +46,8 @@ public class EnemySpawner extends GameObject {
     @Override
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
-        System.out.println(Player.instance.alive);
-        if (Player.instance.alive) {
+//        System.out.println(Player.instance.alive);
+        if (!Player.instance.alive) {
             refresh();
         }
     }

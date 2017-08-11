@@ -15,12 +15,19 @@ public class Physics {
     public static void reset() {
 
         for (PhysicsBody body : bodies) {
+
+            if (body.getStartPosition() != null)
+                body.getBoxCollider().screenPosition.set(body.getStartPosition());
+
             if (body.getType() != TYPE_INFINITYSTONE)
                 body.setActive(true);
             else body.setActive(false);
 
-            if (body.getStartPosition() != null)
-                body.getBoxCollider().screenPosition.set(body.getStartPosition());
+//            if (body.getType() == TYPE_NOPLACE) {
+//
+//
+//            }
+
         }
 
     }
