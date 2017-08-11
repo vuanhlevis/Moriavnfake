@@ -272,7 +272,7 @@ public class Player extends GameObject implements PhysicsBody {
             }
 
             if (body.getType() == TYPE_NOPLACE) {
-                body.getVelocity().set(0, 10);
+                body.setActive(false);
 
             }
 
@@ -297,13 +297,6 @@ public class Player extends GameObject implements PhysicsBody {
             if (body.getType() == TYPE_FLAG) {
                 this.position.x += 30;
                 this.velocity.y = 2;
-            }
-
-
-            if (body.getType() == TYPE_BRICK && body.getBoxCollider().screenPosition.x > 1320 && body.getBoxCollider().screenPosition.x < 1530) {
-
-                body.getVelocity().set(0, 10);
-
             }
 
 
