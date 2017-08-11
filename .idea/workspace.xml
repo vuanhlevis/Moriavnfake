@@ -1,17 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="moriavn:jar" />
-    </artifacts-to-build>
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="1ec67a16-bdee-4687-b5d5-323954c48ae8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/moriavn_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/0.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/100.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/101.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/102.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/105.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/106.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/107.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/112.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/113.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/114.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/115.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/116.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/134.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/135.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/136.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/27.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/28.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/29.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/31.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/36.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/38.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/40.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/40fake.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/41.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/41fake.bmp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/42 - Copy.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/42.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/43 - Copy.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/43.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/44.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/45.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/52.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/52fake.bmp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/54.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/55.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/55fake.bmp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/56 - Copy.bmp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/56.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/6.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/67.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/7.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/7fake.bmp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/82.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/83.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/84.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/85.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/86.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/87.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/92.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/93.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/94.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/99.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/tilemap/frozenBrickChicken1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/base/animator/BrickAnomator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/game/base/animator/EnemyAnimator.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/yellow_square.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/tilemap/40.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/tilemap/41.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/moriavn/game/player/Player.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/moriavn/game/player/PlayerAnimator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/game/map/Tube.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/tilemap/29.bmp" afterPath="$PROJECT_DIR$/assets/tilemap/29fake.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/tilemap/6.bmp" afterPath="$PROJECT_DIR$/assets/tilemap/6fake.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/game/player/PlayerAnimator.java" afterPath="$PROJECT_DIR$/src/game/base/animator/PlayerAnimator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/tilemap/105.bmp" afterPath="$PROJECT_DIR$/assets/tilemap/105.bmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/tilemap/106.bmp" afterPath="$PROJECT_DIR$/assets/tilemap/106.bmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/tilemap/107.bmp" afterPath="$PROJECT_DIR$/assets/tilemap/107.bmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/tilemap/52.bmp" afterPath="$PROJECT_DIR$/assets/tilemap/52.bmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/tilemap/55.bmp" afterPath="$PROJECT_DIR$/assets/tilemap/55.bmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/tilemap/7.bmp" afterPath="$PROJECT_DIR$/assets/tilemap/7.bmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/tilemap/92.bmp" afterPath="$PROJECT_DIR$/assets/tilemap/92.bmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/tilemap/93.bmp" afterPath="$PROJECT_DIR$/assets/tilemap/93.bmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/tilemap/94.bmp" afterPath="$PROJECT_DIR$/assets/tilemap/94.bmp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/moriavn/game/GameWindow$1.class" afterPath="$PROJECT_DIR$/out/production/moriavn/game/GameWindow$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/moriavn/game/GameWindow$2.class" afterPath="$PROJECT_DIR$/out/production/moriavn/game/GameWindow$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/moriavn/game/GameWindow.class" afterPath="$PROJECT_DIR$/out/production/moriavn/game/GameWindow.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/moriavn/game/base/GameObject.class" afterPath="$PROJECT_DIR$/out/production/moriavn/game/base/GameObject.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/moriavn/game/base/Settings.class" afterPath="$PROJECT_DIR$/out/production/moriavn/game/base/Settings.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/moriavn/game/base/physics/Physics.class" afterPath="$PROJECT_DIR$/out/production/moriavn/game/base/physics/Physics.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/moriavn/game/base/physics/PhysicsBody.class" afterPath="$PROJECT_DIR$/out/production/moriavn/game/base/physics/PhysicsBody.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/moriavn/game/enemy/Enemy.class" afterPath="$PROJECT_DIR$/out/production/moriavn/game/enemy/Enemy.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/moriavn/game/enemy/EnemySpawner.class" afterPath="$PROJECT_DIR$/out/production/moriavn/game/enemy/EnemySpawner.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/moriavn/game/map/BlueBrick.class" afterPath="$PROJECT_DIR$/out/production/moriavn/game/map/BlueBrick.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/moriavn/game/map/Brick.class" afterPath="$PROJECT_DIR$/out/production/moriavn/game/map/Brick.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/moriavn/game/map/InfinityStone.class" afterPath="$PROJECT_DIR$/out/production/moriavn/game/map/InfinityStone.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/moriavn/game/map/Stone.class" afterPath="$PROJECT_DIR$/out/production/moriavn/game/map/Stone.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/moriavn/game/map/TileMapText.class" afterPath="$PROJECT_DIR$/out/production/moriavn/game/map/TileMapText.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/moriavn/game/map/TileMember.class" afterPath="$PROJECT_DIR$/out/production/moriavn/game/map/TileMember.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/moriavn/game/map/Tube.class" afterPath="$PROJECT_DIR$/out/production/moriavn/game/map/Tube.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/moriavn/game/map/Water.class" afterPath="$PROJECT_DIR$/out/production/moriavn/game/map/Water.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/moriavn/program.class" afterPath="$PROJECT_DIR$/out/production/moriavn/program.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/tilemap/testmap.txt" afterPath="$PROJECT_DIR$/assets/tilemap/testmap.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/GameWindow.java" afterPath="$PROJECT_DIR$/src/game/GameWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/base/GameObject.java" afterPath="$PROJECT_DIR$/src/game/base/GameObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/base/Settings.java" afterPath="$PROJECT_DIR$/src/game/base/Settings.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/base/physics/Physics.java" afterPath="$PROJECT_DIR$/src/game/base/physics/Physics.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/base/physics/PhysicsBody.java" afterPath="$PROJECT_DIR$/src/game/base/physics/PhysicsBody.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/enemy/Enemy.java" afterPath="$PROJECT_DIR$/src/game/enemy/Enemy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/enemy/EnemySpawner.java" afterPath="$PROJECT_DIR$/src/game/enemy/EnemySpawner.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/map/BlueBrick.java" afterPath="$PROJECT_DIR$/src/game/map/BlueBrick.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/map/Brick.java" afterPath="$PROJECT_DIR$/src/game/map/Brick.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/map/InfinityStone.java" afterPath="$PROJECT_DIR$/src/game/map/InfinityStone.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/map/Stone.java" afterPath="$PROJECT_DIR$/src/game/map/Stone.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/map/TileMapText.java" afterPath="$PROJECT_DIR$/src/game/map/TileMapText.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/map/TileMember.java" afterPath="$PROJECT_DIR$/src/game/map/TileMember.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/map/Water.java" afterPath="$PROJECT_DIR$/src/game/map/Water.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/game/player/Player.java" afterPath="$PROJECT_DIR$/src/game/player/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/program.java" afterPath="$PROJECT_DIR$/src/program.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,9 +140,49 @@
       <file leaf-file-name="TileMapText.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/map/TileMapText.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2465">
+            <state relative-caret-position="671">
               <caret line="150" column="48" lean-forward="false" selection-start-line="150" selection-start-column="48" selection-end-line="150" selection-end-column="48" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TileMember.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/game/map/TileMember.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="35" column="55" lean-forward="false" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
+              <folding>
+                <element signature="e#1999#2000#0" expanded="true" />
+                <element signature="e#2035#2036#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/game/player/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="67" column="8" lean-forward="false" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#10636#10637#0" expanded="true" />
+                <element signature="e#10672#10673#0" expanded="true" />
+                <marker date="1502487245615" expanded="true" signature="10941:11100" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameWindow.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/game/GameWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="79" column="33" lean-forward="false" selection-start-line="79" selection-start-column="33" selection-end-line="79" selection-end-column="33" />
+              <folding>
+                <marker date="1502486940532" expanded="true" signature="2546:2560" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,62 +191,21 @@
         <entry file="file://$PROJECT_DIR$/assets/tilemap/testmap.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+              <caret line="12" column="160" lean-forward="false" selection-start-line="12" selection-start-column="160" selection-end-line="12" selection-end-column="160" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/player/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2159">
-              <caret line="138" column="18" lean-forward="false" selection-start-line="138" selection-start-column="8" selection-end-line="138" selection-end-column="18" />
-              <folding>
-                <element signature="e#11012#11013#0" expanded="true" />
-                <element signature="e#11048#11049#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EnemyAnimator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EnemyAnimator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/base/animator/EnemyAnimator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
+            <state relative-caret-position="124">
               <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TileMember.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/map/TileMember.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="73" column="5" lean-forward="false" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
-              <folding>
-                <element signature="e#2204#2205#0" expanded="true" />
-                <element signature="e#2240#2241#0" expanded="true" />
-                <element signature="e#2661#2662#0" expanded="true" />
-                <element signature="e#2688#2689#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InfinityStone.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/map/InfinityStone.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="38" column="5" lean-forward="false" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-              <folding>
-                <element signature="e#1008#1009#0" expanded="true" />
-                <element signature="e#1044#1045#0" expanded="true" />
-                <element signature="e#1174#1175#0" expanded="true" />
-                <element signature="e#1209#1210#0" expanded="true" />
+                <element signature="e#644#645#0" expanded="true" />
+                <element signature="e#692#693#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -111,24 +214,14 @@
       <file leaf-file-name="Enemy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/enemy/Enemy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="64" column="30" lean-forward="false" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+            <state relative-caret-position="135">
+              <caret line="30" column="21" lean-forward="false" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
               <folding>
-                <element signature="e#1649#1650#0" expanded="true" />
-                <element signature="e#1688#1689#0" expanded="true" />
-                <element signature="e#1739#1740#0" expanded="true" />
-                <element signature="e#1775#1776#0" expanded="true" />
+                <element signature="e#1648#1649#0" expanded="true" />
+                <element signature="e#1687#1688#0" expanded="true" />
+                <element signature="e#1738#1739#0" expanded="true" />
+                <element signature="e#1774#1775#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Animation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/game/base/renderer/Animation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -136,8 +229,30 @@
       <file leaf-file-name="Physics.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game/base/physics/Physics.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="116">
+              <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+              <folding>
+                <marker date="1502477931600" expanded="true" signature="3489:3653" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MoveAll.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/game/base/MoveAll.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="56">
+              <caret line="14" column="83" lean-forward="false" selection-start-line="14" selection-start-column="83" selection-end-line="14" selection-end-column="83" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImageRenderer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/game/base/renderer/ImageRenderer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="56">
+              <caret line="19" column="37" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -171,7 +286,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/game/base/actions/Actions.java" />
         <option value="$PROJECT_DIR$/src/game/base/actions/Action.java" />
         <option value="$PROJECT_DIR$/src/game/base/actions/MovebyAction.java" />
         <option value="$PROJECT_DIR$/src/game/base/actions/RepeatForeverAction.java" />
@@ -198,7 +312,6 @@
         <option value="$PROJECT_DIR$/src/game/enemy/spawn/EnemySpawnAction.java" />
         <option value="$PROJECT_DIR$/src/game/enemy/move/EnemyMoveAction.java" />
         <option value="$PROJECT_DIR$/src/game/map/Mushroom.java" />
-        <option value="$PROJECT_DIR$/src/game/base/MoveAll.java" />
         <option value="$PROJECT_DIR$/src/game/base/camera/Camera.java" />
         <option value="$PROJECT_DIR$/src/game/base/renderer/Animation.java" />
         <option value="$PROJECT_DIR$/src/program.java" />
@@ -210,18 +323,20 @@
         <option value="$PROJECT_DIR$/src/game/base/GameObject.java" />
         <option value="$PROJECT_DIR$/src/game/enemy/EnemySpawner.java" />
         <option value="$PROJECT_DIR$/src/game/map/TileMapText.java" />
-        <option value="$PROJECT_DIR$/src/game/GameWindow.java" />
         <option value="$PROJECT_DIR$/src/game/base/physics/PhysicsBody.java" />
         <option value="$PROJECT_DIR$/src/game/map/BlueBrick.java" />
         <option value="$PROJECT_DIR$/src/game/map/Brick.java" />
         <option value="$PROJECT_DIR$/src/game/map/InfinityStone.java" />
-        <option value="$PROJECT_DIR$/src/game/map/TileMember.java" />
         <option value="$PROJECT_DIR$/src/game/base/physics/Physics.java" />
+        <option value="$PROJECT_DIR$/src/game/player/PlayerAnimator.java" />
+        <option value="$PROJECT_DIR$/src/game/base/animator/EnemyAnimator.java" />
+        <option value="$PROJECT_DIR$/src/game/base/MoveAll.java" />
+        <option value="$PROJECT_DIR$/src/game/enemy/Mushroom.java" />
+        <option value="$PROJECT_DIR$/src/game/enemy/Enemy.java" />
+        <option value="$PROJECT_DIR$/src/game/map/TileMember.java" />
+        <option value="$PROJECT_DIR$/src/game/GameWindow.java" />
         <option value="$PROJECT_DIR$/assets/tilemap/testmap.txt" />
         <option value="$PROJECT_DIR$/src/game/player/Player.java" />
-        <option value="$PROJECT_DIR$/src/game/player/PlayerAnimator.java" />
-        <option value="$PROJECT_DIR$/src/game/enemy/Enemy.java" />
-        <option value="$PROJECT_DIR$/src/game/base/animator/EnemyAnimator.java" />
       </list>
     </option>
   </component>
@@ -270,71 +385,213 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Moriavnfake" />
+              <option name="myItemId" value="Moriavnfakefinal 13" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Moriavnfake" />
+              <option name="myItemId" value="Moriavnfakefinal 13" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Moriavnfake" />
+              <option name="myItemId" value="Moriavnfakefinal 13" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Moriavnfake" />
+              <option name="myItemId" value="Moriavnfakefinal 13" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Moriavnfake" />
+              <option name="myItemId" value="Moriavnfakefinal 13" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Moriavnfake" />
+              <option name="myItemId" value="Moriavnfakefinal 13" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="artifacts" />
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Moriavnfakefinal 13" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Moriavnfakefinal 13" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="moriavn_jar" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="player" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Moriavnfakefinal 13" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Moriavnfakefinal 13" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="map" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Moriavnfakefinal 13" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Moriavnfakefinal 13" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="enemy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Moriavnfakefinal 13" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Moriavnfakefinal 13" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="base" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Moriavnfakefinal 13" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Moriavnfakefinal 13" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="base" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="physics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Moriavnfakefinal 13" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Moriavnfakefinal 13" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tilemap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Moriavnfakefinal 13" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Moriavnfakefinal 13" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Moriavnfake" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\levua\Desktop\Moriavnfake\out\artifacts\moriavn_jar" />
+      <recent name="C:\Users\levua\Desktop\Moriavnfakefinal 13\assets" />
       <recent name="C:\Users\levua\Desktop\Moriavnfakefinal 13\assets\images" />
       <recent name="C:\Users\levua\Desktop\Moriavnfake\assets" />
       <recent name="D:\mario\Moriavnfake\assets" />
@@ -348,6 +605,7 @@
       <recent name="game.base.inputs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\levua\Desktop\Moriavnfakefinal 13\assets" />
       <recent name="D:\moriavn\assets\images\brick" />
     </key>
   </component>
@@ -625,6 +883,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1378" height="744" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -641,7 +900,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17400882" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17400882" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -723,13 +982,6 @@
     <entry file="file://$PROJECT_DIR$/src/game/enemy/spawn/EnemySpawnAction.java" />
     <entry file="file://$PROJECT_DIR$/src/game/enemy/move/EnemyMoveAction.java" />
     <entry file="file://$PROJECT_DIR$/src/game/map/Mushroom.java" />
-    <entry file="file://$PROJECT_DIR$/src/game/base/MoveAll.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game/base/physics/BoxCollider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
@@ -754,13 +1006,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/base/renderer/ImageRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -797,6 +1042,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
           <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -804,6 +1050,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
           <caret line="67" column="1" lean-forward="false" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -818,14 +1065,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/enemy/Mushroom.java" />
     <entry file="file://$PROJECT_DIR$/src/game/base/Settings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -840,13 +1088,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="49" column="37" lean-forward="false" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/GameWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="79" column="31" lean-forward="false" selection-start-line="79" selection-start-column="31" selection-end-line="79" selection-end-column="31" />
+          <folding>
+            <marker date="1502474496906" expanded="true" signature="1929:1935" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -854,6 +1098,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -861,6 +1106,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
           <caret line="53" column="5" lean-forward="false" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+          <folding>
+            <element signature="e#1494#1495#0" expanded="false" />
+            <element signature="e#1530#1531#0" expanded="false" />
+            <element signature="e#1910#1911#0" expanded="false" />
+            <element signature="e#1946#1947#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -868,6 +1119,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1088">
           <caret line="68" column="5" lean-forward="false" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+          <folding>
+            <element signature="e#1025#1026#0" expanded="false" />
+            <element signature="e#1057#1058#0" expanded="false" />
+            <element signature="e#1108#1109#0" expanded="false" />
+            <element signature="e#1139#1140#0" expanded="false" />
+            <element signature="e#1195#1196#0" expanded="false" />
+            <element signature="e#1230#1231#0" expanded="false" />
+            <element signature="e#1280#1281#0" expanded="false" />
+            <element signature="e#1316#1317#0" expanded="false" />
+            <element signature="e#1363#1364#0" expanded="false" />
+            <element signature="e#1399#1400#0" expanded="false" />
+            <element signature="e#1450#1451#0" expanded="false" />
+            <element signature="e#1486#1487#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -876,97 +1141,146 @@
         <state relative-caret-position="578">
           <caret line="38" column="5" lean-forward="false" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
           <folding>
-            <element signature="e#1008#1009#0" expanded="true" />
-            <element signature="e#1044#1045#0" expanded="true" />
-            <element signature="e#1174#1175#0" expanded="true" />
-            <element signature="e#1209#1210#0" expanded="true" />
+            <element signature="e#1008#1009#0" expanded="false" />
+            <element signature="e#1044#1045#0" expanded="false" />
+            <element signature="e#1174#1175#0" expanded="false" />
+            <element signature="e#1209#1210#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/map/TileMember.java">
+    <entry file="file://$PROJECT_DIR$/src/game/player/PlayerAnimator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="73" column="5" lean-forward="false" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+        <state relative-caret-position="17">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/base/animator/PlayerAnimator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="79" column="37" lean-forward="false" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/base/renderer/Animation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-188">
+          <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
           <folding>
-            <element signature="e#2204#2205#0" expanded="true" />
-            <element signature="e#2240#2241#0" expanded="true" />
-            <element signature="e#2661#2662#0" expanded="true" />
-            <element signature="e#2688#2689#0" expanded="true" />
+            <element signature="e#745#746#0" expanded="true" />
+            <element signature="e#784#785#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/base/renderer/ImageRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="19" column="37" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/base/animator/EnemyAnimator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#644#645#0" expanded="true" />
+            <element signature="e#692#693#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game/base/physics/Physics.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="116">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding>
+            <marker date="1502477931600" expanded="true" signature="3489:3653" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/base/MoveAll.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="14" column="83" lean-forward="false" selection-start-line="14" selection-start-column="83" selection-end-line="14" selection-end-column="83" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/enemy/Mushroom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="66" column="5" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="66" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/enemy/Enemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="30" column="21" lean-forward="false" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+          <folding>
+            <element signature="e#1648#1649#0" expanded="true" />
+            <element signature="e#1687#1688#0" expanded="true" />
+            <element signature="e#1738#1739#0" expanded="true" />
+            <element signature="e#1774#1775#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game/map/TileMapText.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2465">
+        <state relative-caret-position="671">
           <caret line="150" column="48" lean-forward="false" selection-start-line="150" selection-start-column="48" selection-end-line="150" selection-end-column="48" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/map/TileMember.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="35" column="55" lean-forward="false" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
+          <folding>
+            <element signature="e#1999#2000#0" expanded="true" />
+            <element signature="e#2035#2036#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/GameWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="79" column="33" lean-forward="false" selection-start-line="79" selection-start-column="33" selection-end-line="79" selection-end-column="33" />
+          <folding>
+            <marker date="1502486940532" expanded="true" signature="2546:2560" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/tilemap/testmap.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/player/PlayerAnimator.java" />
-    <entry file="file://$PROJECT_DIR$/src/game/enemy/Enemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="64" column="30" lean-forward="false" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
-          <folding>
-            <element signature="e#1649#1650#0" expanded="true" />
-            <element signature="e#1688#1689#0" expanded="true" />
-            <element signature="e#1739#1740#0" expanded="true" />
-            <element signature="e#1775#1776#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/base/renderer/Animation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <caret line="12" column="160" lean-forward="false" selection-start-line="12" selection-start-column="160" selection-end-line="12" selection-end-column="160" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game/player/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2159">
-          <caret line="138" column="18" lean-forward="false" selection-start-line="138" selection-start-column="8" selection-end-line="138" selection-end-column="18" />
-          <folding>
-            <element signature="e#11012#11013#0" expanded="true" />
-            <element signature="e#11048#11049#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/base/animator/PlayerAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="142" column="21" lean-forward="false" selection-start-line="137" selection-start-column="4" selection-end-line="142" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game/base/animator/EnemyAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+        <state relative-caret-position="152">
+          <caret line="67" column="8" lean-forward="false" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#10636#10637#0" expanded="true" />
+            <element signature="e#10672#10673#0" expanded="true" />
+            <marker date="1502487245615" expanded="true" signature="10941:11100" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -977,12 +1291,10 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>moriavn:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

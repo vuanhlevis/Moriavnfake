@@ -9,7 +9,10 @@ import game.base.physics.BoxCollider;
 import game.base.physics.Physics;
 import game.base.physics.PhysicsBody;
 import game.enemy.Enemy;
-import game.map.*;
+import game.map.Brick;
+import game.map.InfinityStone;
+import game.map.Stone;
+import game.map.Water;
 
 import static game.map.TileMember.*;
 
@@ -62,11 +65,7 @@ public class Player extends GameObject implements PhysicsBody {
     @Override
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
-
-
-
-//        System.out.println(this.position);
-
+        
         this.velocity.y += gravity;
 
         this.velocity.x = 0;
@@ -128,10 +127,6 @@ public class Player extends GameObject implements PhysicsBody {
 
         moveVertical();
 
-        hitEnemy();
-
-//        hitStone();
-
         this.position.y += velocity.y;
         moveSpecial();
 
@@ -149,46 +144,17 @@ public class Player extends GameObject implements PhysicsBody {
             frameCounter.reset();
         }
 
-        PhysicsBody body = Physics.checkPointion(Brick.class, TYPE_BRICK);
-        if (body != null) {
-            if (body.getType() == TYPE_BRICK && body.getBoxCollider().screenPosition.x > 1320 && body.getBoxCollider().screenPosition.x < 1530)
-                System.out.println(body.getStartPosition());
-        }
-
-
+//        PhysicsBody body = Physics.checkPointion(Brick.class, TYPE_BRICK);
+//        if (body != null) {
+//            if (body.getType() == TYPE_BRICK && body.getBoxCollider().screenPosition.x > 1320 && body.getBoxCollider().screenPosition.x < 1530)
+//                System.out.println(body.getStartPosition());
+//        }
 
     }
 
     private void animate() {
         playerAnimator.run(this);
     }
-
-    private void hitEnemy() {
-
-    }
-
-//
-//    private void hitStone() {
-//        float deltaX = velocity.x > 0 ? 1 : -1;
-//        PhysicsBody body = Physics.bodyInRect(position.add(velocity.x, 0), boxCollider.width, boxCollider.height, TileMember.class);
-//        if (body != null && body.getType() == TYPE_STONE && alive) {
-//            while (Physics.bodyInRect(position.add(deltaX, 0), boxCollider.width, boxCollider.height, TileMember.class) == null) {
-//                position.addUp(deltaX, 0);
-//            }
-//            this.velocity.x = 0;
-//        }
-//
-//
-//        float detalY = velocity.y > 0 ? 1 : -1;
-//        PhysicsBody boody = Physics.bodyInRect(position.add(0, velocity.y), boxCollider.width, boxCollider.height, Stone.class);
-//        if (boody != null && body.getType() == TYPE_STONE && alive) {
-//            while (Physics.bodyInRect(position.add(0, detalY), boxCollider.width, boxCollider.height, Stone.class) == null) {
-//                position.addUp(0, detalY);
-//            }
-//            this.velocity.y = 0;
-//
-//        }
-//    }
 
     private void moveHorizontal() {
         PhysicsBody body = Physics.bodyInRect(position.add(velocity.x, 0), boxCollider.width, boxCollider.height, standclass);
@@ -248,11 +214,20 @@ public class Player extends GameObject implements PhysicsBody {
             }
 
             if ((velocity.y < 0 && body.getType() == TYPE_BRICK && body.getType() != TYPE_CHECKPOINT)) {
-                this.velocity.y = -5;
-                BrickAnomator brickAnomator = GameObjectPool.recycle(BrickAnomator.class);
-                brickAnomator.position = body.getBoxCollider().screenPosition;
 
-                body.setActive(false);
+
+                if (body.getPosition().x < 200 && body.getPosition().y < 230) {
+                    Enemy mushroom = GameObjectPool.recycle(Enemy.class);
+
+                    mushroom.position.set(body.getPosition().x, body.getPosition().y - 30);
+
+                } else {
+                    this.velocity.y = -5;
+                    BrickAnomator brickAnomator = GameObjectPool.recycle(BrickAnomator.class);
+                    brickAnomator.position = body.getBoxCollider().screenPosition;
+                    body.setActive(false);
+                }
+
                 if (!this.alive) {
                     body.setActive(true);
                 }
@@ -287,6 +262,13 @@ public class Player extends GameObject implements PhysicsBody {
                 pointion = true;
                 body.setActive(false);
                 //
+            }
+
+            if (body.getType() == TYPE_INFINITYSTONE) {
+                if (body.getPosition().x >= 2180 && body.getPosition().x <= 2200 && body.getPosition().y < 330 && this.velocity.y < 0) {
+                    Enemy enemy = GameObjectPool.recycle(Enemy.class);
+                    enemy.position.set(body.getPosition().x, body.getPosition().y - 30);
+                }
             }
 
             if (body.getType() == TYPE_WATER) {
@@ -338,6 +320,7 @@ public class Player extends GameObject implements PhysicsBody {
 
                 body.setDissabled(false);
                 body.setActive(true);
+
             }
 
         }

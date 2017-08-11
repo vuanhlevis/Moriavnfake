@@ -28,7 +28,7 @@ public class Enemy extends GameObject implements PhysicsBody {
         this.velocity = new Vector2D();
         this.position.set(600,10);
         children.add(boxCollider);
-        velocity.x = -0.5f;
+        velocity.x = 0.5f;
     }
 
 
