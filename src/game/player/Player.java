@@ -134,7 +134,7 @@ public class Player extends GameObject implements PhysicsBody {
         this.contraints.make(this.position);
         animate();
 
-        if (this.position.y > 500) this.alive = false;
+        if (this.position.y >= Settings.GAMEPLAY_HEIGHT) this.alive = false;
         if (!this.alive && frameCounter.run()) {
             Physics.reset();
             refresh();

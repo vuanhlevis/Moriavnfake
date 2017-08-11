@@ -75,7 +75,7 @@ public class GameWindow extends JFrame{
 
     private void addPlayer() {
         Player player = new Player();
-        player.position.set (2000 , 100);
+        player.position.set (20 , 100);
         GameObject.add(player);
     }
 
