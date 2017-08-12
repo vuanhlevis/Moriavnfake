@@ -14,7 +14,7 @@ public class BrickAnomator extends GameObject implements Renderer {
     //private boolean endOfAction;
 
     public BrickAnomator() {
-        brickExplosionAnimation = new Animation(
+        brickExplosionAnimation = new Animation(6, false,
                 Utils.loadImage("assets/images/brick explosion/explosion1.png"),
                 Utils.loadImage("assets/images/brick explosion/explosion2.png"),
                 Utils.loadImage("assets/images/brick explosion/explosion3.png"),
@@ -30,7 +30,6 @@ public class BrickAnomator extends GameObject implements Renderer {
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
         if (this.brickExplosionAnimation.isFinished()) this.isActive = false;
-
     }
 
     @Override

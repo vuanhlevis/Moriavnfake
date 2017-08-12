@@ -143,9 +143,9 @@ public class TileMapText extends GameObject {
                     tileMember = new Brick(tileMem, TileMember.TYPE_FLAG, new Vector2D(col * tileSize, y + row * tileSize));
                 } else if (tileMem == 27 || tileMem == 28) {
                     tileMember = new Brick(tileMem, TileMember.TYPE_TUBE, new Vector2D(col * tileSize, y + row * tileSize));
-                } else if (tileMem == 42 || tileMem == 43 || tileMem == 56) {
+                } else if (tileMem == 42 || tileMem == 43 || tileMem == 56 || tileMem==57) {
                     tileMember = new Brick(tileMem, TileMember.TYPE_CHECKPOINT, new Vector2D(col * tileSize, y + row * tileSize));
-                } else if (tileMem == 44 ) {
+                } else if (tileMem == 44 ||tileMem == 46 ) {
                     tileMember = new Brick(tileMem, TileMember.TYPE_ELEVATOR, new Vector2D(col * tileSize, y + row * tileSize));
                 } else if (tileMem == 94 || tileMem == 93 || tileMem == 92){
                     tileMember = new TileMember(tileMem, TileMember.TYPE_FLAG, new Vector2D(col * tileSize, y + row * tileSize));

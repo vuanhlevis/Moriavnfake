@@ -21,6 +21,7 @@ public class PlayerAnimator extends GameObject implements Renderer {
     private Animation straightAnimation;
     private Animation flyLeftAnimation;
     private Animation flyRightAnimation;
+    private Animation headShot;
 
     private Animation currentAnimation;
 
@@ -59,6 +60,8 @@ public class PlayerAnimator extends GameObject implements Renderer {
         );
 
         upAnimation = new Animation(
+                7,
+                false,
                 Utils.loadAssetImage("chicken/up/gaUp1_32.png"),
                 Utils.loadAssetImage("chicken/up/gaUp2_32.png"),
                 Utils.loadAssetImage("chicken/up/gaUp3_32.png"),
@@ -80,6 +83,10 @@ public class PlayerAnimator extends GameObject implements Renderer {
         flyRightAnimation = new Animation(
                 Utils.loadAssetImage("chicken/fly/gaFlyRight1_32.png"),
                 Utils.loadAssetImage("chicken/fly/gaFlyRight2_32.png")
+        );
+
+        headShot = new Animation(
+                Utils.loadAssetImage("chicken/fly/gaHeadShot.png")
         );
 
     }
@@ -121,10 +128,12 @@ public class PlayerAnimator extends GameObject implements Renderer {
         }
         else if (player.velocity.y != 0 && player.velocity.x < 0) {
             currentAnimation = flyLeftAnimation;
+        }else if(player.gravity ==0){
+            currentAnimation = headShot;
         }
         else currentAnimation = straightAnimation;
 
-//        System.out.println(player.velocity);
+       // System.out.println(currentAnimation);
     }
 
 

@@ -50,6 +50,8 @@ public class Enemy extends GameObject implements PhysicsBody {
         this.position.x += velocity.x;
 
 
+        this.position.y -= 3;
+
         if (frameCounter.run()) {
             velocity.x *= -1;
             frameCounter.reset();

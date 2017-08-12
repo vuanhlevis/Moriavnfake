@@ -17,6 +17,7 @@ public class InputManager {
 
     public static final InputManager instance = new InputManager();
     private List<InputListener> inputListeners;
+    public boolean startPressed;
 
     private void register(InputListener inputListener) {
         inputListeners.add(inputListener);
@@ -46,6 +47,9 @@ public class InputManager {
                 break;
             case KeyEvent.VK_X:
                 xPressed = true;
+                break;
+            case KeyEvent.VK_SPACE:
+                startPressed = true;
                 break;
         }
 

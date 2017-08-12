@@ -9,10 +9,14 @@ import game.base.physics.BoxCollider;
 import game.base.physics.Physics;
 import game.base.physics.PhysicsBody;
 import game.enemy.Enemy;
+import game.enemy.LegChicken;
 import game.map.Brick;
 import game.map.InfinityStone;
 import game.map.Stone;
 import game.map.Water;
+import tklibs.AudioUtils;
+
+import javax.sound.sampled.Clip;
 
 import static game.map.TileMember.*;
 
@@ -23,6 +27,7 @@ public class Player extends GameObject implements PhysicsBody {
     private BoxCollider boxCollider;
     Contraints contraints;
     boolean checkPoint;
+    public boolean win;
     public boolean alive;
     Class standclass[] = {Brick.class, Stone.class, InfinityStone.class, Water.class, Enemy.class};
     WaitAction waitAction;
@@ -31,27 +36,35 @@ public class Player extends GameObject implements PhysicsBody {
     boolean pointion;
     public boolean moveAuto;
     public boolean sleep;
+    boolean spawnLeg;
 
     PlayerAnimator playerAnimator;
     FrameCounter frameCounter;
+    FrameCounter deactiveLeg;
+    FrameCounter dieCounter;
 
     public float gravity = 1f;
     public Vector2D velocity;
     public static Player instance = new Player();
 
-//    private float skinWidth = 4;
-//    private float skinHeight = 4;
+
+    private Clip audio;
+
 
     public Player() {
         super();
         this.candown = false;
+        this.win = true;
         this.checkPoint = false;
         this.moveAuto = false;
         this.pointion = false;
         this.alive = true;
         this.sleep = false;
+        this.spawnLeg = true;
 
         this.frameCounter = new FrameCounter(50);
+        this.dieCounter = new FrameCounter(50);
+        this.deactiveLeg = new FrameCounter(5);
         this.velocity = new Vector2D();
         this.playerAnimator = new PlayerAnimator();
         this.renderer = playerAnimator;
@@ -60,16 +73,28 @@ public class Player extends GameObject implements PhysicsBody {
         this.waitAction = new WaitAction(15);
         contraints = new Contraints(0, Settings.GAMEPLAY_HEIGHT + 50, 0, Settings.MAP_WIDTH);
         instance = this;
+
     }
 
     @Override
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
+//        System.out.println(win);
+
 
         this.velocity.y += gravity;
 
         this.velocity.x = 0;
 
+        if (spawnLeg && frameCounter.run() && this.position.x == 5727 ) {
+            LegChicken legChicken = GameObjectPool.recycle(LegChicken.class);
+            legChicken.position.set(5727,300);
+            frameCounter.reset();
+            if (deactiveLeg.run()) {
+                spawnLeg = false;
+                win = true;
+            }
+        }
 
         if (!pointion && !moveAuto && !sleep) {
             if (InputManager.instance.leftPressed && alive) {
@@ -108,7 +133,6 @@ public class Player extends GameObject implements PhysicsBody {
         }
 
         if (InputManager.instance.upPressed && alive && waitAction.run(this) && !moveAuto && !sleep) {
-            //Brick.class
             if (Physics.bodyInRect(position.add(0, 1), boxCollider.width, boxCollider.height, standclass) != null)
                 this.velocity.y = -15;
 
@@ -134,26 +158,25 @@ public class Player extends GameObject implements PhysicsBody {
         animate();
 
         if (this.position.y >= Settings.GAMEPLAY_HEIGHT) this.alive = false;
-        if (!this.alive && frameCounter.run()) {
+        if (!this.alive && dieCounter.run()) {
             Physics.reset();
             refresh();
             if (checkPoint) {
-                this.position.set(3025,120);
+                this.position.set(3025, 120);
             }
 
-            frameCounter.reset();
+            dieCounter.reset();
         }
 
-//        PhysicsBody body = Physics.checkPointion(Brick.class, TYPE_BRICK);
-//        if (body != null) {
-//            if (body.getType() == TYPE_BRICK && body.getBoxCollider().screenPosition.x > 1320 && body.getBoxCollider().screenPosition.x < 1530)
-//                System.out.println(body.getStartPosition());
-//        }
 
     }
 
     private void animate() {
         playerAnimator.run(this);
+    }
+
+    private void hitEnemy() {
+
     }
 
     private void moveHorizontal() {
@@ -169,6 +192,7 @@ public class Player extends GameObject implements PhysicsBody {
             if (body.getType() == TYPE_WATER || body.getType() == TYPE_ENEMY) {
                 this.velocity.set(0, -10);
                 this.alive = false;
+                die();
             }
 
             if (body.getType() == TYPE_FLAG) {
@@ -188,6 +212,16 @@ public class Player extends GameObject implements PhysicsBody {
             }
 
         }
+    }
+
+    private void die() {
+        audio = AudioUtils.loadSound("assets/sound/die.wav");
+        audio.start();
+    }
+
+    private void jump() {
+        audio = tklibs.AudioUtils.loadSound("assets/sound/jump.wav");
+        audio.start();
     }
 
 
@@ -213,43 +247,52 @@ public class Player extends GameObject implements PhysicsBody {
                 body.setActive(false);
             }
 
+            if (this.velocity.y<0 && body.getType() == TYPE_INFINITYSTONE && body.getPosition().x > 2175
+                    && body.getPosition().x < 2205 && body.getPosition().y < 360) {
+                Enemy enemy = GameObjectPool.recycle(Enemy.class);
+                enemy.position.set(body.getPosition().x, body.getPosition().y - 30);
+
+            }
+
             if ((velocity.y < 0 && body.getType() == TYPE_BRICK && body.getType() != TYPE_CHECKPOINT)) {
+                this.velocity.y = -5;
 
+                if (body.getPosition().x < 200 && body.getPosition().y < 240) {
+                    Enemy enemy = GameObjectPool.recycle(Enemy.class);
 
-                if (body.getPosition().x < 200 && body.getPosition().y < 230) {
-                    Enemy mushroom = GameObjectPool.recycle(Enemy.class);
+                    enemy.position.set(body.getPosition().x, body.getPosition().y - 30);
 
-                    mushroom.position.set(body.getPosition().x, body.getPosition().y - 30);
-
-                } else {
-                    this.velocity.y = -5;
+                }
+                else {
                     BrickAnomator brickAnomator = GameObjectPool.recycle(BrickAnomator.class);
                     brickAnomator.position = body.getBoxCollider().screenPosition;
                     body.setActive(false);
+
                 }
 
-                if (!this.alive) {
-                    body.setActive(true);
-                }
+//                if (!this.alive) {
+//                    body.setActive(true);
+//                }
+                jump();
             }
 
             if (body.getType() == TYPE_ENEMY && this.velocity.y > 0) {
                 this.velocity.set(0, -10);
                 body.setActive(false);
+                die();
             } else if (body.getType() == TYPE_ENEMY) {
                 this.velocity.set(0, -15);
                 this.alive = false;
+                die();
             }
 
             if (body.getType() == TYPE_MINERALWATER) {
                 sleep = true;
-//                this.position.x += 80;
             }
 
             if (body.getType() == TYPE_NOPLACE) {
                 body.setActive(false);
                 this.velocity.y = -10;
-
             }
 
 
@@ -261,20 +304,13 @@ public class Player extends GameObject implements PhysicsBody {
             if (body.getType() == TYPE_MUSHROOM) {
                 pointion = true;
                 body.setActive(false);
-                //
-            }
 
-            if (body.getType() == TYPE_INFINITYSTONE) {
-                if (body.getPosition().x >= 2180 && body.getPosition().x <= 2200 && body.getPosition().y < 330 && this.velocity.y < 0) {
-                    Enemy enemy = GameObjectPool.recycle(Enemy.class);
-                    enemy.position.set(body.getPosition().x, body.getPosition().y - 30);
-                }
             }
 
             if (body.getType() == TYPE_WATER) {
                 this.velocity.set(0, -15);
-
                 this.alive = false;
+                die();
             }
 
             if (body.getType() == TYPE_FLAG) {
@@ -317,10 +353,9 @@ public class Player extends GameObject implements PhysicsBody {
             if (velocity.y < 0 && this.position.y - 40 < body.getBoxCollider().screenPosition.y
                     && this.position.x + 35 > body.getBoxCollider().screenPosition.x) {
                 this.position.y = body.getBoxCollider().screenPosition.y + 30;
-
+                jump();
                 body.setDissabled(false);
                 body.setActive(true);
-
             }
 
         }

@@ -12,6 +12,9 @@ import game.enemy.EnemySpawner;
 import game.map.TileMapText;
 import game.player.Player;
 import game.scenes.BackGround;
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.media.MediaPlayer;
+import javafx.util.Duration;
 
 import javax.swing.*;
 import java.awt.*;
@@ -26,6 +29,7 @@ import java.awt.image.BufferedImage;
  */
 public class GameWindow extends JFrame{
 
+    private final MediaPlayer media;
     BufferedImage backBufferImage;
     Graphics2D backBufferGraphics2D;
     float position = Player.instance.position.x;
@@ -36,6 +40,7 @@ public class GameWindow extends JFrame{
 
     boolean addEnemy = false;
     boolean stopaddEnemy = false;
+    final JFXPanel jfxPanel = new JFXPanel();
 
     public GameWindow() {
         setupWindow();
@@ -46,10 +51,19 @@ public class GameWindow extends JFrame{
         addPlayer();
 //        addEnemy();
         addCamera();
+
         GameObject gameObject = new EnemySpawner();
-        
+        media = tklibs.AudioUtils.playMedia("assets/sound/soundFinal.mp3");
+
+        media.setOnEndOfMedia(new Runnable() {
+            public void run() {
+                media.seek(Duration.ZERO);
+            }
+        });
+        media.play();
         this.setVisible(true);
     }
+
 
     private void addCamera() {
         Camera camera = new Camera();
@@ -77,7 +91,7 @@ public class GameWindow extends JFrame{
 
     private void addPlayer() {
         Player player = new Player();
-        player.position.set (2000 , 100);
+        player.position.set (20 , 100);
         GameObject.add(player);
     }
 
@@ -115,7 +129,7 @@ public class GameWindow extends JFrame{
         while (true) {
 //
             if (!Player.instance.alive && new WaitAction(50).run(Player.instance)) {
-
+                Settings.playBackGround();
                 GameObject gameObject = new EnemySpawner();
 
             }
@@ -160,21 +174,27 @@ public class GameWindow extends JFrame{
     }
 
     private void run() {
+        if (inputManager.startPressed) {
         GameObject.runAll();
 
-        GameObject.runAllActions();
-
+            GameObject.runAllActions();
+        }
 //        SceneManager.instance.changeSceneIfNeeded();
     }
 
     private void render() {
         backBufferGraphics2D.setColor(Color.BLACK);
         backBufferGraphics2D.fillRect(0, 0, this.getWidth(), this.getHeight());
+        backBufferGraphics2D.drawImage(Utils.loadAssetImage("finalIntro1.png"),0,0,null);
 
-        GameObject.renderAll(backBufferGraphics2D);
+        if (inputManager.startPressed) {
+
+            GameObject.renderAll(backBufferGraphics2D);
+        }
 
         Graphics2D g2d = (Graphics2D) this.getGraphics();
         g2d.drawImage(backBufferImage,0,0,null);
+
     }
 
     private void setupWindow() {
