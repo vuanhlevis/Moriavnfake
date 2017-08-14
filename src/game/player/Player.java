@@ -286,7 +286,7 @@ public class Player extends GameObject implements PhysicsBody {
                 die();
             }
 
-            if (body.getType() == TYPE_MINERALWATER) {
+            if (body.getType() == TYPE_MINERALWATER && InputManager.instance.downPressed) {
                 sleep = true;
             }
 

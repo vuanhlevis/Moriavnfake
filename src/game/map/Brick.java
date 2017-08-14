@@ -22,9 +22,6 @@ public class Brick extends TileMember implements PhysicsBody {
         this.position = position;
         this.type = type;
         children.add(boxCollider);
-        if (type == TYPE_FLAG) {
-            this.boxCollider = new BoxCollider(5,30);
-        }
 
     }
 
