@@ -314,7 +314,8 @@ public class Player extends GameObject implements PhysicsBody {
             }
 
             if (body.getType() == TYPE_FLAG) {
-                this.position.x += 30;
+                standclass = new Class[] { Stone.class, InfinityStone.class, Water.class, Enemy.class};
+                this.position.x += 10;
                 this.velocity.y = 2;
             }
 
@@ -350,7 +351,7 @@ public class Player extends GameObject implements PhysicsBody {
             float detalY = Mathx.sign(velocity.y);
             float deltaX = Mathx.sign(velocity.x);
 
-            if (velocity.y < 0 && this.position.y - 40 < body.getBoxCollider().screenPosition.y
+            if (velocity.y < 0 && this.position.y -  body.getBoxCollider().screenPosition.y <= 30
                     && this.position.x + 35 > body.getBoxCollider().screenPosition.x) {
                 this.position.y = body.getBoxCollider().screenPosition.y + 30;
                 jump();

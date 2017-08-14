@@ -200,7 +200,7 @@ public class GameWindow extends JFrame{
     private void setupWindow() {
         this.setSize(Settings.GAMEPLAY_WIDTH, Settings.GAMEPLAY_HEIGHT);
         this.setResizable(false);
-        this.setTitle("Platformer begin");
+        this.setTitle("CHICKEN_GO -- made by team SHA");
 
         this.addWindowListener(new WindowAdapter() {
             @Override
